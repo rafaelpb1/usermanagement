@@ -1,0 +1,7 @@
+CREATE TABLE users(
+    id BIGINT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    password VARCHAR(300) NOT NULL,
+    role ENUM('ADMIN', 'USER'),
+    enabled BOOLEAN
+);
