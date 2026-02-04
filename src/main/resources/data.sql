@@ -22,11 +22,11 @@ CREATE TABLE customers(
 
 CREATE TABLE vehicles(
     vin VARCHAR(17) PRIMARY KEY NOT NULL UNIQUE,
-    license_plate VARCHAR(7) NOT NULL UNIQUE,
+    license_plate VARCHAR(8) NOT NULL UNIQUE,
     brand VARCHAR(50) NOT NULL,
     model VARCHAR(50) NOT NULL,
     color VARCHAR(30),
-    year INT NOT NULL,
+    model_year INT NOT NULL,
     price DECIMAL(12,2) NOT NULL ,
     status VARCHAR(20) DEFAULT 'DISPONIVEL',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
@@ -38,7 +38,7 @@ CREATE TABLE sales(
     customer_id VARCHAR(20) NOT NULL,
     employee_id BIGINT NOT NULL,
     sale_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    value DECIMAL(12,2) NOT NULL,
+    sale_value DECIMAL(12,2) NOT NULL,
     payment_method VARCHAR(30),
 
     CONSTRAINT fk_vehicle FOREIGN KEY (vehicle_vin) REFERENCES vehicles(vin),

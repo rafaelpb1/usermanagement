@@ -1,0 +1,19 @@
+package com.example.usermanagement.dto;
+
+import com.example.usermanagement.model.vehicle.VehicleStatus;
+
+import java.math.BigDecimal;
+import java.time.Instant;
+
+public record VehicleResponseDTO(
+        String vin,
+        String licensePlate,
+        String brand,
+        String model,
+        String color,
+        Integer year,
+        BigDecimal price,
+        VehicleStatus status,
+        Instant createdAt
+) {
+}

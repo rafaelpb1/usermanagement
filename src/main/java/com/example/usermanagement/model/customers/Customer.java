@@ -9,11 +9,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.validator.constraints.br.CNPJ;
+import org.hibernate.validator.constraints.br.CPF;
 
 import java.time.Instant;
 
 @Entity
-@Table
+@Table(name = "customers")
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -21,14 +23,17 @@ import java.time.Instant;
 public class Customer {
 
     @Id
-    @Column(nullable = false)
+    @Column(name = "document", nullable = false)
+    @CPF
     private String document;
 
-    @Column(nullable = false)
+    @Column(name = "name", nullable = false)
     private String name;
 
+    @Column(name = "phone")
     private String phone;
 
     @CreationTimestamp
+    @Column(name = "created_at")
     private Instant created_at;
 }

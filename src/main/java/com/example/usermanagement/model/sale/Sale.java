@@ -13,28 +13,34 @@ import java.math.BigDecimal;
 import java.time.Instant;
 
 @Entity
-@Table
+@Table(name = "sales")
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 public class Sale {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "vin")
-    private Vehicle vehicle_vin;
+    @OneToOne
+    @JoinColumn(name = "vehicle_vin", referencedColumnName = "vin", nullable = false, unique = true)
+    private Vehicle vehicle;
 
     @ManyToOne
-    @JoinColumn(name = "document")
-    private Customer customer_id;
+    @JoinColumn(name = "customer_id", referencedColumnName = "document", nullable = false)
+    private Customer customer;
 
     @ManyToOne
-    @JoinColumn(name = "id")
-    private Employee employee_id;
+    @JoinColumn(name = "employee_id", referencedColumnName = "id", nullable = false)
+    private Employee employee;
 
-    private Instant sale_date;
+    @Column(name = "sale_date")
+    private Instant saleDate;
 
-    @Column(precision = 12, scale = 2)
-    private BigDecimal value;
+    @Column(name = "sale_value", precision = 12, scale = 2, nullable = false)
+    private BigDecimal saleValue;
+
+    @Column(name = "payment_method")
+    private String paymentMethod;
 }
