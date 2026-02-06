@@ -10,14 +10,14 @@ CREATE TABLE employees(
     id BIGINT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
     position VARCHAR(50) NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    created_at TIMESTAMP NOT NULL
 );
 
 CREATE TABLE customers(
     document VARCHAR(20) PRIMARY KEY NOT NULL,
     name VARCHAR(100) NOT NULL,
     phone VARCHAR(20),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    created_at TIMESTAMP NOT NULL
 );
 
 CREATE TABLE vehicles(
@@ -29,7 +29,7 @@ CREATE TABLE vehicles(
     model_year INT NOT NULL,
     price DECIMAL(12,2) NOT NULL ,
     status VARCHAR(20) DEFAULT 'DISPONIVEL',
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    created_at TIMESTAMP NOT NULL
 );
 
 CREATE TABLE sales(
@@ -37,7 +37,7 @@ CREATE TABLE sales(
     vehicle_vin VARCHAR(17) NOT NULL UNIQUE,
     customer_id VARCHAR(20) NOT NULL,
     employee_id BIGINT NOT NULL,
-    sale_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    sale_date TIMESTAMP NOT NULL ,
     sale_value DECIMAL(12,2) NOT NULL,
     payment_method VARCHAR(30),
 

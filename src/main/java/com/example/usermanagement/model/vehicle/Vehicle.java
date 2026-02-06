@@ -43,7 +43,7 @@ public class Vehicle {
     @Column(name = "status")
     private VehicleStatus status = VehicleStatus.AVAILABLE;
 
-    @CreationTimestamp
-    @Column(name = "created_at", updatable = false)
+    @Column(name = "created_at", nullable = false, updatable = false)
+    @org.hibernate.annotations.CreationTimestamp
     private Instant createdAt;
 }
