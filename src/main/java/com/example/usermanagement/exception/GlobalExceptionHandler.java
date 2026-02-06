@@ -36,6 +36,14 @@ public class GlobalExceptionHandler {
                 List.of(new ErrorField("role", "Invalid value.")));
     }
 
+    @ExceptionHandler(RoleBusinessException.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public ErrorResponse handleBusinessRole(RoleBusinessException e) {
+        return new ErrorResponse(e.getStatus().value(),
+                e.getMessage(),
+                List.of());
+    }
+
     @ExceptionHandler(AccessDeniedException.class)
     @ResponseStatus(HttpStatus.FORBIDDEN)
     public ErrorResponse handleAccessDenied(RuntimeException e) {
