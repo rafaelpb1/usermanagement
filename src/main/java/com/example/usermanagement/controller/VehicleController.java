@@ -2,6 +2,7 @@ package com.example.usermanagement.controller;
 
 import com.example.usermanagement.dto.VehicleRequestDTO;
 import com.example.usermanagement.dto.VehicleResponseDTO;
+import com.example.usermanagement.exception.ErrorResponse;
 import com.example.usermanagement.service.VehicleService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -11,6 +12,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/vehicles")
@@ -21,21 +23,39 @@ public class VehicleController {
 
     @PostMapping
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<VehicleResponseDTO> createVehicle(@RequestBody @Valid VehicleRequestDTO dto) {
-        VehicleResponseDTO vehicle = service.create(dto);
-        return ResponseEntity.status(HttpStatus.CREATED).body(vehicle);
+    public ResponseEntity<Object> createVehicle(@RequestBody @Valid VehicleRequestDTO dto) {
+        Optional<VehicleResponseDTO> result = service.create(dto);
+
+        if (result.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.CONFLICT)
+                    .body(ErrorResponse.responseDefault("Already exists customer registered with this VIN."));
+        }
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(result.get());
     }
 
     @DeleteMapping("/{vin}")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<Void> deleteVehicleByVin(@PathVariable String vin) {
-        service.deleteByVIN(vin);
+    public ResponseEntity<Object> deleteVehicleByVin(@PathVariable String vin) {
+        Optional<Void> result = service.deleteByVIN(vin);
+
+        if (result.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(ErrorResponse.responseDefault("Vehicle not found."));
+        }
+
         return ResponseEntity.noContent().build();
     }
 
     @GetMapping
     @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public ResponseEntity<List<VehicleResponseDTO>> listAll() {
-        return ResponseEntity.status(HttpStatus.OK).body(service.listAllVehicles());
+        Optional<List<VehicleResponseDTO>> result = service.listAllVehicles();
+
+        if (result.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+        }
+
+        return ResponseEntity.ok(result.get());
     }
 }
