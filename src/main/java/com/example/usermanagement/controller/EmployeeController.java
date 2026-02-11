@@ -28,7 +28,7 @@ public class EmployeeController {
         if (result.isEmpty()) {
             return ResponseEntity.status(HttpStatus.CONFLICT)
                     .body(ErrorResponse
-                            .responseDefault("Already exists employee registered with this name."));
+                            .of(HttpStatus.CONFLICT,"Already exists employee registered with this name."));
         }
 
         return ResponseEntity.status(HttpStatus.CREATED).body(result.get());
@@ -36,12 +36,12 @@ public class EmployeeController {
 
     @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<Object> deleteByName(@PathVariable Long id) {
+    public ResponseEntity<Object> delete(@PathVariable Long id) {
         Optional<Void> result = service.deleteByName(id);
 
         if (result.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body(ErrorResponse.responseDefault("Employee not found"));
+                    .body(ErrorResponse.of(HttpStatus.NOT_FOUND,"Employee not found"));
         }
 
         return ResponseEntity.noContent().build();
@@ -50,12 +50,8 @@ public class EmployeeController {
     @GetMapping
     @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public ResponseEntity<List<EmployeeResponseDTO>> listAll() {
-        Optional<List<EmployeeResponseDTO>> result = service.listALl();
+        List<EmployeeResponseDTO> result = service.listALl();
 
-        if (result.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        }
-
-        return ResponseEntity.ok().body(result.get());
+        return ResponseEntity.ok().body(result);
     }
 }

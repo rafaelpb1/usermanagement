@@ -62,12 +62,10 @@ public class SaleService {
         return true;
     }
 
-    public Optional<List<SaleResponseDTO>> listAll() {
-        List<SaleResponseDTO> list = repository.findAll().stream().map(mapper::toDTO).toList();
-
-        if (list.isEmpty()) return Optional.empty();
-
-        return Optional.of(list);
+    public List<SaleResponseDTO> listAll() {
+        return repository.findAll()
+                .stream()
+                .map(mapper::toDTO)
+                .toList();
     }
-
 }

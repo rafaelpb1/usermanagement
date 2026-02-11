@@ -42,11 +42,10 @@ public class CustomerService {
         return Optional.ofNullable(null);
     }
 
-    public Optional<List<CustomerResponseDTO>> listAll() {
-        List<CustomerResponseDTO> list = repository.findAll().stream().map(mapper::toDTO).toList();
-
-        if (list.isEmpty()) return Optional.empty();
-
-        return Optional.of(list);
+    public List<CustomerResponseDTO> listAll() {
+        return repository.findAll()
+                .stream()
+                .map(mapper::toDTO)
+                .toList();
     }
 }

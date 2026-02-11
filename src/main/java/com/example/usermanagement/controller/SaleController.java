@@ -31,7 +31,7 @@ public class SaleController {
 
         if (result.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body(ErrorResponse.responseDefault("Employee, Customer or Vehicle not found"));
+                    .body(ErrorResponse.of(HttpStatus.NOT_FOUND,"Employee, Customer or Vehicle not found"));
         }
 
         return ResponseEntity.status(HttpStatus.CREATED).body(result.get());
@@ -39,12 +39,12 @@ public class SaleController {
 
     @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<Object> deleteByName(@PathVariable Long id) {
+    public ResponseEntity<Object> delete(@PathVariable Long id) {
         boolean deleted = service.deleteById(id);
 
         if (!deleted) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body(ErrorResponse.responseDefault("Sale not found"));
+                    .body(ErrorResponse.of(HttpStatus.NOT_FOUND, "Sale not found"));
         }
 
         return ResponseEntity.noContent().build();
@@ -53,12 +53,8 @@ public class SaleController {
     @GetMapping
     @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public ResponseEntity<List<SaleResponseDTO>> listAll() {
-        Optional<List<SaleResponseDTO>> result = service.listAll();
+        List<SaleResponseDTO> result = service.listAll();
 
-        if (result.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.CONFLICT).build();
-        }
-
-        return ResponseEntity.ok(result.get());
+        return ResponseEntity.ok(result);
     }
 }

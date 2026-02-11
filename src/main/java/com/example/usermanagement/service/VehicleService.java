@@ -46,11 +46,11 @@ public class VehicleService {
         return Optional.ofNullable(null);
     }
 
-    public Optional<List<VehicleResponseDTO>> listAllVehicles() {
-        List<VehicleResponseDTO> list = repository.findAll().stream().map(mapper::toDTO).toList();
+    public List<VehicleResponseDTO> listAllVehicles() {
+        return repository.findAll()
+                .stream()
+                .map(mapper::toDTO)
+                .toList();
 
-        if (list.isEmpty()) return Optional.empty();
-
-        return Optional.of(list);
     }
 }

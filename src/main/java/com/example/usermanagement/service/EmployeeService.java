@@ -44,12 +44,10 @@ public class EmployeeService {
         return Optional.ofNullable(null);
     }
 
-    public Optional<List<EmployeeResponseDTO>> listALl() {
-
-        List<EmployeeResponseDTO> list = repository.findAll().stream().map(mapper::toDTO).toList();
-
-        if (list.isEmpty()) return Optional.empty();
-
-        return Optional.of(list);
+    public List<EmployeeResponseDTO> listALl() {
+        return repository.findAll()
+                .stream()
+                .map(mapper::toDTO)
+                .toList();
     }
 }

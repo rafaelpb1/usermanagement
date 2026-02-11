@@ -28,7 +28,7 @@ public class VehicleController {
 
         if (result.isEmpty()) {
             return ResponseEntity.status(HttpStatus.CONFLICT)
-                    .body(ErrorResponse.responseDefault("Already exists customer registered with this VIN."));
+                    .body(ErrorResponse.of(HttpStatus.CONFLICT,"Already exists customer registered with this VIN."));
         }
 
         return ResponseEntity.status(HttpStatus.CREATED).body(result.get());
@@ -41,7 +41,7 @@ public class VehicleController {
 
         if (result.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body(ErrorResponse.responseDefault("Vehicle not found."));
+                    .body(ErrorResponse.of(HttpStatus.NOT_FOUND,"Vehicle not found."));
         }
 
         return ResponseEntity.noContent().build();
@@ -50,12 +50,8 @@ public class VehicleController {
     @GetMapping
     @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public ResponseEntity<List<VehicleResponseDTO>> listAll() {
-        Optional<List<VehicleResponseDTO>> result = service.listAllVehicles();
+        List<VehicleResponseDTO> result = service.listAllVehicles();
 
-        if (result.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
-        }
-
-        return ResponseEntity.ok(result.get());
+        return ResponseEntity.ok(result);
     }
 }
