@@ -2,16 +2,12 @@ package com.example.usermanagement.service;
 
 import com.example.usermanagement.dto.VehicleRequestDTO;
 import com.example.usermanagement.dto.VehicleResponseDTO;
-import com.example.usermanagement.exception.NotFoundVinException;
-import com.example.usermanagement.exception.RoleBusinessException;
 import com.example.usermanagement.mappers.VehicleMapper;
 import com.example.usermanagement.model.vehicle.Vehicle;
 import com.example.usermanagement.repository.VehicleRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
@@ -46,11 +42,11 @@ public class VehicleService {
         return Optional.ofNullable(null);
     }
 
-    public Optional<List<VehicleResponseDTO>> listAllVehicles() {
-        List<VehicleResponseDTO> list = repository.findAll().stream().map(mapper::toDTO).toList();
+    public List<VehicleResponseDTO> listAllVehicles() {
+        return repository.findAll()
+                .stream()
+                .map(mapper::toDTO)
+                .toList();
 
-        if (list.isEmpty()) return Optional.empty();
-
-        return Optional.of(list);
     }
 }

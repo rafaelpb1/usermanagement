@@ -13,9 +13,7 @@ import com.example.usermanagement.repository.SaleRepository;
 import com.example.usermanagement.repository.VehicleRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
@@ -62,12 +60,10 @@ public class SaleService {
         return true;
     }
 
-    public Optional<List<SaleResponseDTO>> listAll() {
-        List<SaleResponseDTO> list = repository.findAll().stream().map(mapper::toDTO).toList();
-
-        if (list.isEmpty()) return Optional.empty();
-
-        return Optional.of(list);
+    public List<SaleResponseDTO> listAll() {
+        return repository.findAll()
+                .stream()
+                .map(mapper::toDTO)
+                .toList();
     }
-
 }

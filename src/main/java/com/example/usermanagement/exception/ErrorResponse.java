@@ -8,7 +8,19 @@ public record ErrorResponse(int status,
                             String message,
                             List<ErrorField> errors) {
 
-    public static ErrorResponse responseDefault(String message) {
-        return new ErrorResponse(HttpStatus.BAD_REQUEST.value(), message, List.of());
+    public static ErrorResponse of(HttpStatus status, String message) {
+        return new ErrorResponse(
+                status.value(),
+                message,
+                List.of());
     }
+
+    public static ErrorResponse of(HttpStatus status, String message, List<ErrorField> errors) {
+        return new ErrorResponse(
+                status.value(),
+                message,
+                errors
+        );
+    }
+
 }

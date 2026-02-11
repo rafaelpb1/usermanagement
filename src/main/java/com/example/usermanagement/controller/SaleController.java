@@ -3,9 +3,6 @@ package com.example.usermanagement.controller;
 import com.example.usermanagement.dto.SaleRequestDTO;
 import com.example.usermanagement.dto.SaleResponseDTO;
 import com.example.usermanagement.exception.ErrorResponse;
-import com.example.usermanagement.repository.CustomerRepository;
-import com.example.usermanagement.repository.EmployeeRepository;
-import com.example.usermanagement.repository.VehicleRepository;
 import com.example.usermanagement.service.SaleService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -25,13 +22,13 @@ public class SaleController {
 
     @PostMapping
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<?> create(@RequestBody SaleRequestDTO dto) {
+    public ResponseEntity<?> createSale(@RequestBody SaleRequestDTO dto) {
 
         Optional<SaleResponseDTO> result = service.create(dto);
 
         if (result.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body(ErrorResponse.responseDefault("Employee, Customer or Vehicle not found"));
+                    .body(ErrorResponse.of(HttpStatus.NOT_FOUND,"Employee, Customer or Vehicle not found"));
         }
 
         return ResponseEntity.status(HttpStatus.CREATED).body(result.get());
@@ -39,12 +36,12 @@ public class SaleController {
 
     @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<Object> deleteByName(@PathVariable Long id) {
+    public ResponseEntity<Object> deleteSale(@PathVariable Long id) {
         boolean deleted = service.deleteById(id);
 
         if (!deleted) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body(ErrorResponse.responseDefault("Sale not found"));
+                    .body(ErrorResponse.of(HttpStatus.NOT_FOUND, "Sale not found"));
         }
 
         return ResponseEntity.noContent().build();
@@ -52,13 +49,9 @@ public class SaleController {
 
     @GetMapping
     @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
-    public ResponseEntity<List<SaleResponseDTO>> listAll() {
-        Optional<List<SaleResponseDTO>> result = service.listAll();
+    public ResponseEntity<List<SaleResponseDTO>> listAllSales() {
+        List<SaleResponseDTO> result = service.listAll();
 
-        if (result.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.CONFLICT).build();
-        }
-
-        return ResponseEntity.ok(result.get());
+        return ResponseEntity.ok(result);
     }
 }

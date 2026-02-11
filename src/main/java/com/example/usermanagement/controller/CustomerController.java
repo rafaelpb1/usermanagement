@@ -27,7 +27,8 @@ public class CustomerController {
 
         if (result.isEmpty()) {
             return ResponseEntity.status(HttpStatus.CONFLICT)
-                    .body(ErrorResponse.responseDefault("Already exists customer registered with this document."));
+                    .body(ErrorResponse.of(HttpStatus.CONFLICT,
+                            "Already exists customer registered with this VIN."));
         }
 
         return ResponseEntity.status(HttpStatus.CREATED).body(result.get());
@@ -40,7 +41,7 @@ public class CustomerController {
 
         if (result.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body(ErrorResponse.responseDefault("Customer not found"));
+                    .body(ErrorResponse.of(HttpStatus.NOT_FOUND,"Customer not found"));
         }
 
         return ResponseEntity.noContent().build();
@@ -49,12 +50,8 @@ public class CustomerController {
     @GetMapping
     @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public ResponseEntity<List<CustomerResponseDTO>> listAllCustomers() {
-        Optional<List<CustomerResponseDTO>> result = service.listAll();
+        List<CustomerResponseDTO> result = service.listAll();
 
-        if (result.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
-        }
-
-        return ResponseEntity.ok(result.get());
+        return ResponseEntity.ok(result);
     }
 }

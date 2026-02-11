@@ -22,13 +22,13 @@ public class EmployeeController {
 
     @PostMapping
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<Object> create(@RequestBody EmployeeRequestDTO dto) {
+    public ResponseEntity<Object> createEmployee(@RequestBody EmployeeRequestDTO dto) {
         Optional<EmployeeResponseDTO> result = service.create(dto);
 
         if (result.isEmpty()) {
             return ResponseEntity.status(HttpStatus.CONFLICT)
                     .body(ErrorResponse
-                            .responseDefault("Already exists employee registered with this name."));
+                            .of(HttpStatus.CONFLICT,"Already exists employee registered with this name."));
         }
 
         return ResponseEntity.status(HttpStatus.CREATED).body(result.get());
@@ -36,12 +36,12 @@ public class EmployeeController {
 
     @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<Object> deleteByName(@PathVariable Long id) {
-        Optional<Void> result = service.deleteByName(id);
+    public ResponseEntity<Object> deleteEmployeeById(@PathVariable Long id) {
+        Optional<Void> result = service.deleteById(id);
 
         if (result.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body(ErrorResponse.responseDefault("Employee not found"));
+                    .body(ErrorResponse.of(HttpStatus.NOT_FOUND,"Employee not found"));
         }
 
         return ResponseEntity.noContent().build();
@@ -49,13 +49,9 @@ public class EmployeeController {
 
     @GetMapping
     @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
-    public ResponseEntity<List<EmployeeResponseDTO>> listAll() {
-        Optional<List<EmployeeResponseDTO>> result = service.listALl();
+    public ResponseEntity<List<EmployeeResponseDTO>> listAllEmployees() {
+        List<EmployeeResponseDTO> result = service.listALl();
 
-        if (result.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        }
-
-        return ResponseEntity.ok().body(result.get());
+        return ResponseEntity.ok().body(result);
     }
 }

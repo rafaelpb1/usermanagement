@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -23,39 +24,39 @@ public class UserService {
     private final PasswordEncoder encoder;
 
     @Transactional
-    public UserResponseDTO save(UserRequestDTO dto) {
-        if (repository.findByUsername(dto.username()).isPresent())
-            throw new ResponseStatusException(HttpStatus.CONFLICT, "Username already exists");
+    public Optional<UserResponseDTO> create(UserRequestDTO dto) {
+        if (repository.findByUsername(dto.username()).isPresent()) {
+            return Optional.empty();
+        }
 
         User user = mapper.toEntity(dto);
         user.setPassword(encoder.encode(dto.password()));
 
-        User save = repository.save(user);
-        return mapper.toDTO(save);
+        User saved = repository.save(user);
+        return Optional.of(mapper.toDTO(saved));
 
     }
 
     @Transactional
-    public void delete(Long id) {
-        var user = repository.findById(id).orElseThrow( () ->
-                new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found."));
+    public Optional<Void> delete(Long id) {
+        Optional<User> user = repository.findById(id);
 
-        repository.delete(user);
+        if (user.isEmpty()) return Optional.empty();
+
+        repository.delete(user.get());
+
+        return Optional.ofNullable(null);
     }
 
-    public List<UserResponseDTO> list() {
-        List<User> all = repository.findAll();
-
-        return all.stream()
+    public List<UserResponseDTO> listAll() {
+        return repository.findAll()
+                .stream()
                 .map(mapper::toDTO)
                 .toList();
     }
 
-    public UserResponseDTO ById(Long id) {
-        User UserById = repository.findById(id)
-                .orElseThrow( () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found."));
-
-        return mapper.toDTO(UserById);
+    public Optional<UserResponseDTO> listById(Long id) {
+        return repository.findById(id).map(mapper::toDTO);
     }
 
     public UserResponseDTO findByUsername(String username) {
