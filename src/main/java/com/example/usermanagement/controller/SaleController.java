@@ -3,9 +3,6 @@ package com.example.usermanagement.controller;
 import com.example.usermanagement.dto.SaleRequestDTO;
 import com.example.usermanagement.dto.SaleResponseDTO;
 import com.example.usermanagement.exception.ErrorResponse;
-import com.example.usermanagement.repository.CustomerRepository;
-import com.example.usermanagement.repository.EmployeeRepository;
-import com.example.usermanagement.repository.VehicleRepository;
 import com.example.usermanagement.service.SaleService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -25,7 +22,7 @@ public class SaleController {
 
     @PostMapping
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<?> create(@RequestBody SaleRequestDTO dto) {
+    public ResponseEntity<?> createSale(@RequestBody SaleRequestDTO dto) {
 
         Optional<SaleResponseDTO> result = service.create(dto);
 
@@ -39,7 +36,7 @@ public class SaleController {
 
     @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<Object> delete(@PathVariable Long id) {
+    public ResponseEntity<Object> deleteSale(@PathVariable Long id) {
         boolean deleted = service.deleteById(id);
 
         if (!deleted) {
@@ -52,7 +49,7 @@ public class SaleController {
 
     @GetMapping
     @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
-    public ResponseEntity<List<SaleResponseDTO>> listAll() {
+    public ResponseEntity<List<SaleResponseDTO>> listAllSales() {
         List<SaleResponseDTO> result = service.listAll();
 
         return ResponseEntity.ok(result);

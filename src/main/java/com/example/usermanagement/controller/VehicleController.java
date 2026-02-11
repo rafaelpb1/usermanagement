@@ -49,7 +49,7 @@ public class VehicleController {
 
     @GetMapping
     @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
-    public ResponseEntity<List<VehicleResponseDTO>> listAll() {
+    public ResponseEntity<List<VehicleResponseDTO>> listAllVehicles() {
         List<VehicleResponseDTO> result = service.listAllVehicles();
 
         return ResponseEntity.ok(result);

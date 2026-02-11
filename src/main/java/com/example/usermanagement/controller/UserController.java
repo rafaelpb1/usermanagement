@@ -22,7 +22,7 @@ public class UserController {
 
     @PostMapping
     public ResponseEntity<Object> createUser(@RequestBody @Valid UserRequestDTO dto) {
-        Optional<UserResponseDTO> result = service.save(dto);
+        Optional<UserResponseDTO> result = service.create(dto);
 
         if (result.isEmpty()) {
             return ResponseEntity.status(HttpStatus.CONFLICT)
@@ -36,19 +36,19 @@ public class UserController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<List<UserResponseDTO>> listAll() {
-        List<UserResponseDTO> result = service.list();
+    public ResponseEntity<List<UserResponseDTO>> listAllUsers() {
+        List<UserResponseDTO> result = service.listAll();
 
         return ResponseEntity.ok().body(result);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Object> searchById(@PathVariable Long id) {
-        Optional<UserResponseDTO> result = service.ById(id);
+    public ResponseEntity<Object> searchUserById(@PathVariable Long id) {
+        Optional<UserResponseDTO> result = service.listById(id);
 
         if (result.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body(ErrorResponse.of(HttpStatus.NOT_FOUND, "User not found"));
+            return ResponseEntity.status(HttpStatus.OK)
+                    .body(ErrorResponse.of(HttpStatus.OK, "User not found"));
         }
 
         return ResponseEntity.ok(result.get());
@@ -56,7 +56,7 @@ public class UserController {
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public ResponseEntity<Object> delete(@PathVariable Long id) {
+    public ResponseEntity<Object> deleteUser(@PathVariable Long id) {
         Optional<Void> userDeleted = service.delete(id);
 
         if (userDeleted.isEmpty()) {

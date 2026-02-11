@@ -22,7 +22,7 @@ public class EmployeeController {
 
     @PostMapping
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<Object> create(@RequestBody EmployeeRequestDTO dto) {
+    public ResponseEntity<Object> createEmployee(@RequestBody EmployeeRequestDTO dto) {
         Optional<EmployeeResponseDTO> result = service.create(dto);
 
         if (result.isEmpty()) {
@@ -36,8 +36,8 @@ public class EmployeeController {
 
     @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<Object> delete(@PathVariable Long id) {
-        Optional<Void> result = service.deleteByName(id);
+    public ResponseEntity<Object> deleteEmployeeById(@PathVariable Long id) {
+        Optional<Void> result = service.deleteById(id);
 
         if (result.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
@@ -49,7 +49,7 @@ public class EmployeeController {
 
     @GetMapping
     @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
-    public ResponseEntity<List<EmployeeResponseDTO>> listAll() {
+    public ResponseEntity<List<EmployeeResponseDTO>> listAllEmployees() {
         List<EmployeeResponseDTO> result = service.listALl();
 
         return ResponseEntity.ok().body(result);

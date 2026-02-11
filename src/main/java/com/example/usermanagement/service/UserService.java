@@ -24,7 +24,7 @@ public class UserService {
     private final PasswordEncoder encoder;
 
     @Transactional
-    public Optional<UserResponseDTO> save(UserRequestDTO dto) {
+    public Optional<UserResponseDTO> create(UserRequestDTO dto) {
         if (repository.findByUsername(dto.username()).isPresent()) {
             return Optional.empty();
         }
@@ -48,14 +48,14 @@ public class UserService {
         return Optional.ofNullable(null);
     }
 
-    public List<UserResponseDTO> list() {
+    public List<UserResponseDTO> listAll() {
         return repository.findAll()
                 .stream()
                 .map(mapper::toDTO)
                 .toList();
     }
 
-    public Optional<UserResponseDTO> ById(Long id) {
+    public Optional<UserResponseDTO> listById(Long id) {
         return repository.findById(id).map(mapper::toDTO);
     }
 

@@ -7,9 +7,7 @@ import com.example.usermanagement.model.employee.Employee;
 import com.example.usermanagement.repository.EmployeeRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
@@ -34,7 +32,7 @@ public class EmployeeService {
     }
 
     @Transactional
-    public Optional<Void> deleteByName(Long id) {
+    public Optional<Void> deleteById(Long id) {
         Optional<Employee> employee = repository.findById(id);
 
         if (employee.isEmpty()) return Optional.empty();
