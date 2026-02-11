@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -23,33 +24,33 @@ public class VehicleService {
     private final VehicleMapper mapper;
 
     @Transactional
-    public VehicleResponseDTO create(VehicleRequestDTO dto) {
+    public Optional<VehicleResponseDTO> create(VehicleRequestDTO dto) {
         if (dto.vin() != null && repository.existsById(dto.vin())) {
-            throw new RoleBusinessException(HttpStatus.CONFLICT,
-                    "Already exists car registered with this VIN.");
+            return Optional.empty();
         }
 
         Vehicle vehicle = mapper.toEntity(dto);
         Vehicle saved = repository.save(vehicle);
 
-        return mapper.toDTO(saved);
+        return Optional.of(mapper.toDTO(saved));
     }
 
     @Transactional
-    public void deleteByVIN(String vin) {
-        var vinexclude = repository.findById(vin)
-                .orElseThrow( () -> new NotFoundVinException(HttpStatus.NOT_FOUND, "Not found VIN."));
+    public Optional<Void> deleteByVIN(String vin) {
+        Optional<Vehicle> result = repository.findById(vin);
 
-        repository.delete(vinexclude);
+        if (result.isEmpty()) return Optional.empty();
+
+        repository.delete(result.get());
+
+        return Optional.ofNullable(null);
     }
 
-    public List<VehicleResponseDTO> listAllVehicles() {
-        List<Vehicle> all = repository.findAll();
-        List<VehicleResponseDTO> list = all.stream().map(mapper::toDTO).toList();
+    public Optional<List<VehicleResponseDTO>> listAllVehicles() {
+        List<VehicleResponseDTO> list = repository.findAll().stream().map(mapper::toDTO).toList();
 
-        if (all.isEmpty()) throw new ResponseStatusException
-                (HttpStatus.NO_CONTENT, "No vehicle found.");
+        if (list.isEmpty()) return Optional.empty();
 
-        return list;
+        return Optional.of(list);
     }
 }

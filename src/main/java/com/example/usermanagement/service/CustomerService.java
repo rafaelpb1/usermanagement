@@ -7,11 +7,10 @@ import com.example.usermanagement.model.customers.Customer;
 import com.example.usermanagement.repository.CustomerRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -21,33 +20,33 @@ public class CustomerService {
     private final CustomerMapper mapper;
 
     @Transactional
-    public CustomerResponseDTO create(CustomerRequestDTO dto) {
+    public Optional<CustomerResponseDTO> create(CustomerRequestDTO dto) {
         if (dto.document() != null && repository.existsById(dto.document())) {
-            throw new ResponseStatusException(HttpStatus.CONFLICT,
-                    "Already exists customer registered with this document.");
+            return Optional.empty();
         }
 
         Customer customer = mapper.toEntity(dto);
         Customer saved = repository.save(customer);
 
-        return mapper.toDTO(saved);
+        return Optional.of(mapper.toDTO(saved));
     }
 
     @Transactional
-    public void deleteByDocument(String document) {
-        Customer customer = repository.findById(document).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,
-                "Not found customer"));
+    public Optional<Void> deleteByDocument(String document) {
+        Optional<Customer> customer = repository.findById(document);
 
-        repository.delete(customer);
+        if (customer.isEmpty()) return Optional.empty();
+
+        repository.delete(customer.get());
+
+        return Optional.ofNullable(null);
     }
 
-    public List<CustomerResponseDTO> listALl() {
-        List<Customer> all = repository.findAll();
-        List<CustomerResponseDTO> list = all.stream().map(mapper::toDTO).toList();
+    public Optional<List<CustomerResponseDTO>> listAll() {
+        List<CustomerResponseDTO> list = repository.findAll().stream().map(mapper::toDTO).toList();
 
-        if (all.isEmpty()) throw new ResponseStatusException(
-                HttpStatus.NO_CONTENT, "No customer found.");
+        if (list.isEmpty()) return Optional.empty();
 
-        return list;
+        return Optional.of(list);
     }
 }
