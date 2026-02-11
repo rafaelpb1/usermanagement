@@ -2,6 +2,7 @@ package com.example.usermanagement.controller;
 
 import com.example.usermanagement.dto.UserRequestDTO;
 import com.example.usermanagement.dto.UserResponseDTO;
+import com.example.usermanagement.exception.ErrorResponse;
 import com.example.usermanagement.service.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -10,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/users")
@@ -19,27 +21,49 @@ public class UserController {
     private final UserService service;
 
     @PostMapping
-    public ResponseEntity<UserResponseDTO> createUser(@RequestBody @Valid UserRequestDTO dto) {
+    public ResponseEntity<Object> createUser(@RequestBody @Valid UserRequestDTO dto) {
+        Optional<UserResponseDTO> result = service.save(dto);
+
+        if (result.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.CONFLICT)
+                    .body(ErrorResponse.of(HttpStatus.CONFLICT,
+                            "Already user was registered at system."));
+        }
+
         return ResponseEntity.status(HttpStatus.CREATED)
-                .body(service.save(dto));
+                .body(result.get());
     }
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<List<UserResponseDTO>> listAll() {
-        return ResponseEntity.status(HttpStatus.OK)
-                .body(service.list());
+        List<UserResponseDTO> result = service.list();
+
+        return ResponseEntity.ok().body(result);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<UserResponseDTO> searchById(@PathVariable Long id) {
-        return ResponseEntity.status(HttpStatus.OK)
-                .body(service.ById(id));
+    public ResponseEntity<Object> searchById(@PathVariable Long id) {
+        Optional<UserResponseDTO> result = service.ById(id);
+
+        if (result.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(ErrorResponse.of(HttpStatus.NOT_FOUND, "User not found"));
+        }
+
+        return ResponseEntity.ok(result.get());
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(@PathVariable Long id) {
-        service.delete(id);
+    public ResponseEntity<Object> delete(@PathVariable Long id) {
+        Optional<Void> userDeleted = service.delete(id);
+
+        if (userDeleted.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(ErrorResponse.of(HttpStatus.NOT_FOUND, "User not found."));
+        }
+
+        return ResponseEntity.noContent().build();
     }
 }
