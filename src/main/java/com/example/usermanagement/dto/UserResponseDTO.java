@@ -1,12 +1,11 @@
 package com.example.usermanagement.dto;
 
-import com.example.usermanagement.model.Role;
+import com.example.usermanagement.model.users.Role;
 
 public record UserResponseDTO(
         Long id,
         String username,
-        String password,
         Role role,
-        Boolean enabled
+        boolean enabled
 ) {
 }

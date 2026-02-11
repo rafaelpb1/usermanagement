@@ -3,16 +3,16 @@ package com.example.usermanagement.service;
 import com.example.usermanagement.dto.UserRequestDTO;
 import com.example.usermanagement.dto.UserResponseDTO;
 import com.example.usermanagement.mappers.UserMapper;
-import com.example.usermanagement.model.User;
+import com.example.usermanagement.model.users.User;
 import com.example.usermanagement.repository.UserRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -20,13 +20,18 @@ public class UserService {
 
     private final UserRepository repository;
     private final UserMapper mapper;
+    private final PasswordEncoder encoder;
 
     @Transactional
     public UserResponseDTO save(UserRequestDTO dto) {
-        User user = mapper.toEntity(dto);
-        User save = repository.save(user);
+        if (repository.findByUsername(dto.username()).isPresent())
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Username already exists");
 
-        return mapper.toDTO(user);
+        User user = mapper.toEntity(dto);
+        user.setPassword(encoder.encode(dto.password()));
+
+        User save = repository.save(user);
+        return mapper.toDTO(save);
 
     }
 
@@ -44,6 +49,20 @@ public class UserService {
         return all.stream()
                 .map(mapper::toDTO)
                 .toList();
+    }
+
+    public UserResponseDTO ById(Long id) {
+        User UserById = repository.findById(id)
+                .orElseThrow( () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found."));
+
+        return mapper.toDTO(UserById);
+    }
+
+    public UserResponseDTO findByUsername(String username) {
+        User user = repository.findByUsername(username)
+                .orElseThrow( () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found."));
+
+        return mapper.toDTO(user);
     }
 
 //    public UserResponseDTO findById()
