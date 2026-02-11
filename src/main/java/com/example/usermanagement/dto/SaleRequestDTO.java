@@ -1,12 +1,14 @@
 package com.example.usermanagement.dto;
 
+import com.example.usermanagement.model.sale.PaymentMethod;
+
 import java.math.BigDecimal;
 
 public record SaleRequestDTO(
         String vehicleVin,
         String customerDocument,
-        String employeeId,
+        Long employeeId,
         BigDecimal saleValue,
-        String paymentMethod
+        PaymentMethod paymentMethod
 ) {
 }

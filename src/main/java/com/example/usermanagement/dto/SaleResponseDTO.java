@@ -2,6 +2,7 @@ package com.example.usermanagement.dto;
 
 import java.math.BigDecimal;
 import java.time.Instant;
+import java.time.LocalDateTime;
 
 public record SaleResponseDTO(
         Long id,
@@ -9,7 +10,7 @@ public record SaleResponseDTO(
         String customerName,
         String employeeName,
         BigDecimal saleValue,
-        Instant saleDate
+        LocalDateTime saleDate
 
 ) {
 }

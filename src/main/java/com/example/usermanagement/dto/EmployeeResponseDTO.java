@@ -1,11 +1,11 @@
 package com.example.usermanagement.dto;
 
-import java.time.Instant;
+import java.time.LocalDateTime;
 
 public record EmployeeResponseDTO(
         Long id,
         String name,
         String position,
-        Instant created_at
+        LocalDateTime created_at
 ) {
 }
