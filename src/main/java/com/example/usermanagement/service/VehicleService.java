@@ -2,6 +2,8 @@ package com.example.usermanagement.service;
 
 import com.example.usermanagement.dto.VehicleRequestDTO;
 import com.example.usermanagement.dto.VehicleResponseDTO;
+import com.example.usermanagement.exception.VehicleAlreadyRegisteredException;
+import com.example.usermanagement.exception.VehicleNotFoundException;
 import com.example.usermanagement.mappers.VehicleMapper;
 import com.example.usermanagement.model.vehicle.Vehicle;
 import com.example.usermanagement.repository.VehicleRepository;
@@ -24,7 +26,7 @@ public class VehicleService {
     @Transactional
     public VehicleResponseDTO create(VehicleRequestDTO dto) {
         if (dto.vin() != null && repository.existsById(dto.vin())) {
-            throw new ResponseStatusException(HttpStatus.CONFLICT, "Vehicle already registered at system.");
+            throw new VehicleAlreadyRegisteredException("Vehicle already registered at system.");
         }
 
         Vehicle vehicle = mapper.toEntity(dto);
@@ -36,7 +38,7 @@ public class VehicleService {
     @Transactional
     public void deleteByVIN(String vin) {
         Vehicle vehicle = repository.findById(vin).orElseThrow(() ->
-                new ResponseStatusException(HttpStatus.NOT_FOUND, "VIN not found."));
+                new VehicleNotFoundException("VIN not found."));
 
         repository.delete(vehicle);
     }

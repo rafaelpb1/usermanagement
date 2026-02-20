@@ -2,6 +2,10 @@ package com.example.usermanagement.service;
 
 import com.example.usermanagement.dto.SaleRequestDTO;
 import com.example.usermanagement.dto.SaleResponseDTO;
+import com.example.usermanagement.exception.CustomerNotFoundException;
+import com.example.usermanagement.exception.EmployeeNotFoundException;
+import com.example.usermanagement.exception.SaleNotFoundException;
+import com.example.usermanagement.exception.VehicleNotFoundException;
 import com.example.usermanagement.mappers.SaleMapper;
 import com.example.usermanagement.model.customers.Customer;
 import com.example.usermanagement.model.employee.Employee;
@@ -35,13 +39,14 @@ public class SaleService {
     public SaleResponseDTO create(SaleRequestDTO dto) {
 
         Employee employee = employeeRepository.findById(dto.employeeId()).orElseThrow( ()->
-                new ResponseStatusException(HttpStatus.NOT_FOUND, "Employee not found."));
+                new EmployeeNotFoundException("Employee not found."));
 
         Vehicle vehicle = vehicleRepository.findById(dto.vehicleVin()).orElseThrow( () ->
-                new ResponseStatusException(HttpStatus.NOT_FOUND, "Vehicle not found."));
+                new VehicleNotFoundException("Vehicle not found."));
 
         Customer customer = customerRepository.findById(dto.customerDocument()).orElseThrow( () ->
-                new ResponseStatusException(HttpStatus.NOT_FOUND, "Vehicle not found."));
+                new CustomerNotFoundException("Customer not found."));
+
         Sale sale = mapper.toEntity(
                 dto,
                 employee,
@@ -56,7 +61,7 @@ public class SaleService {
     @Transactional
     public void deleteById(Long id) {
         if (!repository.existsById(id)) {
-            throw new RuntimeException("Sale not found.");
+            throw new SaleNotFoundException("Sale not found.");
         }
         repository.deleteById(id);
     }

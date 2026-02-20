@@ -2,7 +2,7 @@ package com.example.usermanagement.service;
 
 import com.example.usermanagement.dto.UserRequestDTO;
 import com.example.usermanagement.dto.UserResponseDTO;
-import com.example.usermanagement.exception.UserNotExists;
+import com.example.usermanagement.exception.UserNotExistsException;
 import com.example.usermanagement.mappers.UserMapper;
 import com.example.usermanagement.model.users.User;
 import com.example.usermanagement.repository.UserRepository;
@@ -41,7 +41,7 @@ public class UserService {
     @Transactional
     public void delete(Long id) {
         repository.findById(id)
-                .orElseThrow(() -> new UserNotExists("User not exists"));
+                .orElseThrow(() -> new UserNotExistsException("User not exists"));
 
         repository.deleteById(id);
     }

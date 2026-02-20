@@ -2,6 +2,8 @@ package com.example.usermanagement.service;
 
 import com.example.usermanagement.dto.CustomerRequestDTO;
 import com.example.usermanagement.dto.CustomerResponseDTO;
+import com.example.usermanagement.exception.CustomerAlreadyRegisteredException;
+import com.example.usermanagement.exception.CustomerNotFoundException;
 import com.example.usermanagement.mappers.CustomerMapper;
 import com.example.usermanagement.model.customers.Customer;
 import com.example.usermanagement.repository.CustomerRepository;
@@ -12,7 +14,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -24,7 +25,7 @@ public class CustomerService {
     @Transactional
     public CustomerResponseDTO create(CustomerRequestDTO dto) {
         if (dto.document() != null && repository.existsById(dto.document())) {
-            throw new ResponseStatusException(HttpStatus.CONFLICT, "Customer already registered at system");
+            throw new CustomerAlreadyRegisteredException("Customer already registered at system");
         }
 
         Customer customer = mapper.toEntity(dto);
@@ -36,7 +37,7 @@ public class CustomerService {
     @Transactional
     public void deleteByDocument(String document) {
         Customer customer = repository.findById(document).orElseThrow(() ->
-                new ResponseStatusException(HttpStatus.NOT_FOUND, "Customer not found."));
+                new CustomerNotFoundException("Customer not found."));
 
         repository.delete(customer);
     }
