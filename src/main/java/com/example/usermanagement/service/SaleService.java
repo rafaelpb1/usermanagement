@@ -13,7 +13,10 @@ import com.example.usermanagement.repository.SaleRepository;
 import com.example.usermanagement.repository.VehicleRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
@@ -29,35 +32,33 @@ public class SaleService {
     private final VehicleRepository vehicleRepository;
 
     @Transactional
-    public Optional<SaleResponseDTO> create(SaleRequestDTO dto) {
+    public SaleResponseDTO create(SaleRequestDTO dto) {
 
-        Optional<Employee> employee = employeeRepository.findById(dto.employeeId());
-        if (employee.isEmpty()) return Optional.empty();
+        Employee employee = employeeRepository.findById(dto.employeeId()).orElseThrow( ()->
+                new ResponseStatusException(HttpStatus.NOT_FOUND, "Employee not found."));
 
-        Optional<Vehicle> vehicle = vehicleRepository.findById(dto.vehicleVin());
-        if (vehicle.isEmpty()) return Optional.empty();
+        Vehicle vehicle = vehicleRepository.findById(dto.vehicleVin()).orElseThrow( () ->
+                new ResponseStatusException(HttpStatus.NOT_FOUND, "Vehicle not found."));
 
-        Optional<Customer> customer = customerRepository.findById(dto.customerDocument());
-        if (customer.isEmpty()) return Optional.empty();
-
+        Customer customer = customerRepository.findById(dto.customerDocument()).orElseThrow( () ->
+                new ResponseStatusException(HttpStatus.NOT_FOUND, "Vehicle not found."));
         Sale sale = mapper.toEntity(
                 dto,
-                employee.get(),
-                vehicle.get(),
-                customer.get() );
+                employee,
+                vehicle,
+                customer);
 
         Sale saved = repository.save(sale);
 
-        return Optional.of(mapper.toDTO(saved));
+        return mapper.toDTO(saved);
     }
 
     @Transactional
-    public boolean deleteById(Long id) {
-        if (!repository.existsById(id)) return false;
-
+    public void deleteById(Long id) {
+        if (!repository.existsById(id)) {
+            throw new RuntimeException("Sale not found.");
+        }
         repository.deleteById(id);
-
-        return true;
     }
 
     public List<SaleResponseDTO> listAll() {

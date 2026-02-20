@@ -23,27 +23,13 @@ public class SaleController {
     @PostMapping
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> createSale(@RequestBody SaleRequestDTO dto) {
-
-        Optional<SaleResponseDTO> result = service.create(dto);
-
-        if (result.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body(ErrorResponse.of(HttpStatus.NOT_FOUND,"Employee, Customer or Vehicle not found"));
-        }
-
-        return ResponseEntity.status(HttpStatus.CREATED).body(result.get());
+        return ResponseEntity.status(HttpStatus.CREATED).body(service.create(dto));
     }
 
     @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<Object> deleteSale(@PathVariable Long id) {
-        boolean deleted = service.deleteById(id);
-
-        if (!deleted) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body(ErrorResponse.of(HttpStatus.NOT_FOUND, "Sale not found"));
-        }
-
+    public ResponseEntity<Void> deleteSale(@PathVariable Long id) {
+        service.deleteById(id);
         return ResponseEntity.noContent().build();
     }
 

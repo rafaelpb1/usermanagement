@@ -2,6 +2,7 @@ package com.example.usermanagement.service;
 
 import com.example.usermanagement.dto.UserRequestDTO;
 import com.example.usermanagement.dto.UserResponseDTO;
+import com.example.usermanagement.exception.UserNotExists;
 import com.example.usermanagement.mappers.UserMapper;
 import com.example.usermanagement.model.users.User;
 import com.example.usermanagement.repository.UserRepository;
@@ -24,28 +25,25 @@ public class UserService {
     private final PasswordEncoder encoder;
 
     @Transactional
-    public Optional<UserResponseDTO> create(UserRequestDTO dto) {
+    public UserResponseDTO create(UserRequestDTO dto) {
         if (repository.findByUsername(dto.username()).isPresent()) {
-            return Optional.empty();
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Username already exists");
         }
 
         User user = mapper.toEntity(dto);
         user.setPassword(encoder.encode(dto.password()));
 
         User saved = repository.save(user);
-        return Optional.of(mapper.toDTO(saved));
+        return mapper.toDTO(saved);
 
     }
 
     @Transactional
-    public Optional<Void> delete(Long id) {
-        Optional<User> user = repository.findById(id);
+    public void delete(Long id) {
+        repository.findById(id)
+                .orElseThrow(() -> new UserNotExists("User not exists"));
 
-        if (user.isEmpty()) return Optional.empty();
-
-        repository.delete(user.get());
-
-        return Optional.ofNullable(null);
+        repository.deleteById(id);
     }
 
     public List<UserResponseDTO> listAll() {

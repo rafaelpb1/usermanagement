@@ -1,5 +1,6 @@
 package com.example.usermanagement.controller;
 
+import com.example.usermanagement.dto.CustomerResponseDTO;
 import com.example.usermanagement.dto.EmployeeRequestDTO;
 import com.example.usermanagement.dto.EmployeeResponseDTO;
 import com.example.usermanagement.exception.ErrorResponse;
@@ -22,28 +23,14 @@ public class EmployeeController {
 
     @PostMapping
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<Object> createEmployee(@RequestBody EmployeeRequestDTO dto) {
-        Optional<EmployeeResponseDTO> result = service.create(dto);
-
-        if (result.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.CONFLICT)
-                    .body(ErrorResponse
-                            .of(HttpStatus.CONFLICT,"Already exists employee registered with this name."));
-        }
-
-        return ResponseEntity.status(HttpStatus.CREATED).body(result.get());
+    public ResponseEntity<EmployeeResponseDTO> createEmployee(@RequestBody EmployeeRequestDTO dto) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(service.create(dto));
     }
 
     @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<Object> deleteEmployeeById(@PathVariable Long id) {
-        Optional<Void> result = service.deleteById(id);
-
-        if (result.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body(ErrorResponse.of(HttpStatus.NOT_FOUND,"Employee not found"));
-        }
-
+    public ResponseEntity<Void> deleteEmployeeById(@PathVariable Long id) {
+        service.deleteById(id);
         return ResponseEntity.noContent().build();
     }
 

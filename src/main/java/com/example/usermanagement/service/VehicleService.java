@@ -7,7 +7,9 @@ import com.example.usermanagement.model.vehicle.Vehicle;
 import com.example.usermanagement.repository.VehicleRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
@@ -20,26 +22,23 @@ public class VehicleService {
     private final VehicleMapper mapper;
 
     @Transactional
-    public Optional<VehicleResponseDTO> create(VehicleRequestDTO dto) {
+    public VehicleResponseDTO create(VehicleRequestDTO dto) {
         if (dto.vin() != null && repository.existsById(dto.vin())) {
-            return Optional.empty();
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Vehicle already registered at system.");
         }
 
         Vehicle vehicle = mapper.toEntity(dto);
         Vehicle saved = repository.save(vehicle);
 
-        return Optional.of(mapper.toDTO(saved));
+        return mapper.toDTO(saved);
     }
 
     @Transactional
-    public Optional<Void> deleteByVIN(String vin) {
-        Optional<Vehicle> result = repository.findById(vin);
+    public void deleteByVIN(String vin) {
+        Vehicle vehicle = repository.findById(vin).orElseThrow(() ->
+                new ResponseStatusException(HttpStatus.NOT_FOUND, "VIN not found."));
 
-        if (result.isEmpty()) return Optional.empty();
-
-        repository.delete(result.get());
-
-        return Optional.ofNullable(null);
+        repository.delete(vehicle);
     }
 
     public List<VehicleResponseDTO> listAllVehicles() {

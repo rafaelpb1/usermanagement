@@ -7,7 +7,9 @@ import com.example.usermanagement.model.customers.Customer;
 import com.example.usermanagement.repository.CustomerRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
@@ -20,26 +22,23 @@ public class CustomerService {
     private final CustomerMapper mapper;
 
     @Transactional
-    public Optional<CustomerResponseDTO> create(CustomerRequestDTO dto) {
+    public CustomerResponseDTO create(CustomerRequestDTO dto) {
         if (dto.document() != null && repository.existsById(dto.document())) {
-            return Optional.empty();
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Customer already registered at system");
         }
 
         Customer customer = mapper.toEntity(dto);
         Customer saved = repository.save(customer);
 
-        return Optional.of(mapper.toDTO(saved));
+        return mapper.toDTO(saved);
     }
 
     @Transactional
-    public Optional<Void> deleteByDocument(String document) {
-        Optional<Customer> customer = repository.findById(document);
+    public void deleteByDocument(String document) {
+        Customer customer = repository.findById(document).orElseThrow(() ->
+                new ResponseStatusException(HttpStatus.NOT_FOUND, "Customer not found."));
 
-        if (customer.isEmpty()) return Optional.empty();
-
-        repository.delete(customer.get());
-
-        return Optional.ofNullable(null);
+        repository.delete(customer);
     }
 
     public List<CustomerResponseDTO> listAll() {

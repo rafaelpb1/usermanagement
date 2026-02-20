@@ -22,28 +22,14 @@ public class CustomerController {
 
     @PostMapping
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<Object> createCustomer(@RequestBody CustomerRequestDTO dto) {
-        Optional<CustomerResponseDTO> result = service.create(dto);
-
-        if (result.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.CONFLICT)
-                    .body(ErrorResponse.of(HttpStatus.CONFLICT,
-                            "Already exists customer registered with this VIN."));
-        }
-
-        return ResponseEntity.status(HttpStatus.CREATED).body(result.get());
+    public ResponseEntity<CustomerResponseDTO> createCustomer(@RequestBody CustomerRequestDTO dto) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(service.create(dto));
     }
 
     @DeleteMapping("/{document}")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<Object> deleteCustomerByDocument(@PathVariable String document) {
-        Optional<Void> result = service.deleteByDocument(document);
-
-        if (result.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body(ErrorResponse.of(HttpStatus.NOT_FOUND,"Customer not found"));
-        }
-
+    public ResponseEntity<CustomerResponseDTO> deleteCustomerByDocument(@PathVariable String document) {
+        service.deleteByDocument(document);
         return ResponseEntity.noContent().build();
     }
 

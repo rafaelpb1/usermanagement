@@ -1,5 +1,6 @@
 package com.example.usermanagement.controller;
 
+import com.example.usermanagement.dto.EmployeeResponseDTO;
 import com.example.usermanagement.dto.VehicleRequestDTO;
 import com.example.usermanagement.dto.VehicleResponseDTO;
 import com.example.usermanagement.exception.ErrorResponse;
@@ -23,27 +24,14 @@ public class VehicleController {
 
     @PostMapping
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<Object> createVehicle(@RequestBody @Valid VehicleRequestDTO dto) {
-        Optional<VehicleResponseDTO> result = service.create(dto);
-
-        if (result.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.CONFLICT)
-                    .body(ErrorResponse.of(HttpStatus.CONFLICT,"Already exists customer registered with this VIN."));
-        }
-
-        return ResponseEntity.status(HttpStatus.CREATED).body(result.get());
+    public ResponseEntity<VehicleResponseDTO> createVehicle(@RequestBody @Valid VehicleRequestDTO dto) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(service.create(dto));
     }
 
     @DeleteMapping("/{vin}")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<Object> deleteVehicleByVin(@PathVariable String vin) {
-        Optional<Void> result = service.deleteByVIN(vin);
-
-        if (result.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body(ErrorResponse.of(HttpStatus.NOT_FOUND,"Vehicle not found."));
-        }
-
+    public ResponseEntity<Void> deleteVehicleByVin(@PathVariable String vin) {
+        service.deleteByVIN(vin);
         return ResponseEntity.noContent().build();
     }
 

@@ -7,7 +7,9 @@ import com.example.usermanagement.model.employee.Employee;
 import com.example.usermanagement.repository.EmployeeRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
@@ -20,26 +22,23 @@ public class EmployeeService {
     private final EmployeeMapper mapper;
 
     @Transactional
-    public Optional<EmployeeResponseDTO> create(EmployeeRequestDTO dto) {
+    public EmployeeResponseDTO create(EmployeeRequestDTO dto) {
         if (dto.name() != null && repository.existsByName(dto.name())) {
-            return Optional.empty();
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Employee already registered at system");
         }
 
         Employee employee = mapper.toEntity(dto);
         Employee saved = repository.save(employee);
 
-        return Optional.of(mapper.toDTO(saved));
+        return mapper.toDTO(saved);
     }
 
     @Transactional
-    public Optional<Void> deleteById(Long id) {
-        Optional<Employee> employee = repository.findById(id);
+    public void deleteById(Long id) {
+        Employee employee = repository.findById(id).orElseThrow(() ->
+                new ResponseStatusException(HttpStatus.NOT_FOUND, "Employee not found."));
 
-        if (employee.isEmpty()) return Optional.empty();
-
-        repository.delete(employee.get());
-
-        return Optional.ofNullable(null);
+        repository.delete(employee);
     }
 
     public List<EmployeeResponseDTO> listALl() {
