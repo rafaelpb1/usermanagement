@@ -9,8 +9,8 @@ import org.mapstruct.Mapping;
 @Mapper(componentModel = "spring")
 public interface VehicleMapper {
 
+    @Mapping(target = "status", ignore = true)
     Vehicle toEntity(VehicleRequestDTO dto);
 
-    @Mapping(target = "status", ignore = true)
     VehicleResponseDTO toDTO(Vehicle entity);
 }

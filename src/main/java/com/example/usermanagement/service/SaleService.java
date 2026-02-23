@@ -2,28 +2,22 @@ package com.example.usermanagement.service;
 
 import com.example.usermanagement.dto.SaleRequestDTO;
 import com.example.usermanagement.dto.SaleResponseDTO;
-import com.example.usermanagement.exception.CustomerNotFoundException;
-import com.example.usermanagement.exception.EmployeeNotFoundException;
-import com.example.usermanagement.exception.SaleNotFoundException;
-import com.example.usermanagement.exception.VehicleNotFoundException;
+import com.example.usermanagement.exception.*;
 import com.example.usermanagement.mappers.SaleMapper;
 import com.example.usermanagement.model.customers.Customer;
 import com.example.usermanagement.model.employee.Employee;
 import com.example.usermanagement.model.sale.Sale;
 import com.example.usermanagement.model.vehicle.Vehicle;
+import com.example.usermanagement.model.vehicle.VehicleStatus;
 import com.example.usermanagement.repository.CustomerRepository;
 import com.example.usermanagement.repository.EmployeeRepository;
 import com.example.usermanagement.repository.SaleRepository;
 import com.example.usermanagement.repository.VehicleRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -34,6 +28,7 @@ public class SaleService {
     private final EmployeeRepository employeeRepository;
     private final CustomerRepository customerRepository;
     private final VehicleRepository vehicleRepository;
+    VehicleStatus vehicleStatus;
 
     @Transactional
     public SaleResponseDTO create(SaleRequestDTO dto) {
@@ -46,6 +41,12 @@ public class SaleService {
 
         Customer customer = customerRepository.findById(dto.customerDocument()).orElseThrow( () ->
                 new CustomerNotFoundException("Customer not found."));
+
+        if(vehicle.getStatus() != VehicleStatus.AVAILABLE) {
+            throw new VehicleNotAvailable("Vehicle is not available for sale.");
+        }
+
+        vehicle.setStatus(VehicleStatus.SOLD);
 
         Sale sale = mapper.toEntity(
                 dto,

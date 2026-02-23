@@ -39,6 +39,7 @@ public class Vehicle {
     @Column(name = "price", precision = 12, scale = 2)
     private BigDecimal price;
 
+    @Builder.Default
     @Enumerated(EnumType.STRING)
     @Column(name = "status")
     private VehicleStatus status = VehicleStatus.AVAILABLE;
