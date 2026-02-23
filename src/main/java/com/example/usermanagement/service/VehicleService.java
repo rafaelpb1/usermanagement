@@ -30,7 +30,7 @@ public class VehicleService {
         }
 
         Vehicle vehicle = mapper.toEntity(dto);
-        Vehicle saved = repository.save(vehicle);
+        Vehicle saved = repository.saveAndFlush(vehicle);
 
         return mapper.toDTO(saved);
     }

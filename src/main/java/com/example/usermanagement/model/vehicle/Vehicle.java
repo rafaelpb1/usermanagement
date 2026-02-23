@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.math.BigDecimal;
 import java.time.Instant;
@@ -43,6 +44,6 @@ public class Vehicle {
     private VehicleStatus status = VehicleStatus.AVAILABLE;
 
     @Column(name = "created_at", nullable = false, updatable = false)
-    @org.hibernate.annotations.CreationTimestamp
+    @CreationTimestamp
     private Instant createdAt;
 }
