@@ -16,24 +16,26 @@ import java.util.stream.Collectors;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ErrorResponse handleValidation(MethodArgumentNotValidException e) {
         List<FieldError> fieldErrors = e.getFieldErrors();
         List<ErrorField> listErrors = fieldErrors.stream()
                 .map(fe -> new ErrorField(fe.getField(), fe.getDefaultMessage()))
                 .collect(Collectors.toList());
 
-        return new ErrorResponse(HttpStatus.UNPROCESSABLE_ENTITY.value(),
-                "Error validation",
+        return new ErrorResponse(HttpStatus.BAD_REQUEST.value(),
+                "Validation Error",
                 listErrors);
     }
 
     @ExceptionHandler(HttpMessageNotReadableException.class)
-    @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ErrorResponse HandleJsonInvalid(HttpMessageNotReadableException e) {
-        return new ErrorResponse(422,
-                "Error validation",
-                List.of(new ErrorField("role", "Invalid value.")));
+        return new ErrorResponse(400,
+                "Error Malformed or invalid request body",
+                List.of(new ErrorField(
+                        "requestBody",
+                        "Invalid JSON format or invalid enum value")));
     }
 
     @ExceptionHandler(RoleBusinessException.class)
@@ -56,7 +58,7 @@ public class GlobalExceptionHandler {
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public ErrorResponse handleErrorGenericException(Exception e) {
         return new ErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR.value(),
-                "Unexpected error.",
+                "Unexpected internal server error.",
                 List.of());
     }
 }

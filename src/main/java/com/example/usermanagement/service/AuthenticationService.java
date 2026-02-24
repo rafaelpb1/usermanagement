@@ -30,9 +30,9 @@ public class AuthenticationService {
 
         Authentication authenticate = authenticationManager.authenticate(usernamePassword);
 
-        String token = service.generateToken((User) authenticate.getPrincipal());
+        User user = (User) authenticate.getPrincipal();
 
-        return new LoginResponseDTO(token);
+        return service.generateToken(user);
     }
 
     public void register(RegisterDTO dto) {

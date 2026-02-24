@@ -4,12 +4,12 @@ import jakarta.validation.constraints.NotBlank;
 import org.hibernate.validator.constraints.br.CPF;
 
 public record CustomerRequestDTO(
-        @NotBlank
-        @CPF
+        @NotBlank(message = "Document is required")
+        @CPF(message = "Invalid CPF")
         String document,
-        @NotBlank
+        @NotBlank(message = "Name is required")
         String name,
-        @NotBlank
+        @NotBlank(message = "Phone is required")
         String phone
 ) {
 }
