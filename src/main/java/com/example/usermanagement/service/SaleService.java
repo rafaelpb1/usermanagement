@@ -43,7 +43,7 @@ public class SaleService {
                 new CustomerNotFoundException("Customer not found."));
 
         if(vehicle.getStatus() != VehicleStatus.AVAILABLE) {
-            throw new VehicleNotAvailable("Vehicle is not available for sale.");
+            throw new VehicleNotAvailableException("Vehicle is not available for sale.");
         }
 
         vehicle.setStatus(VehicleStatus.SOLD);
