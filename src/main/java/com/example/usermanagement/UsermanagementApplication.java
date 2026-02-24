@@ -14,33 +14,33 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @EnableJpaAuditing
 public class UsermanagementApplication {
 
-	@Bean
-	CommandLineRunner iniciar(UserRepository repository,
-							  PasswordEncoder encoder) {
-		return args -> {
-			if (repository.findByUsername("admin").isEmpty()) {
-				User admin = User.builder()
-						.username("admin")
-						.password(encoder.encode("admin123"))
-						.role(Role.ADMIN)
-						.enabled(true)
-						.build();
-
-				repository.save(admin);
-			}
-
-			if (repository.findByUsername("user").isEmpty()) {
-				User admin = User.builder()
-						.username("user")
-						.password(encoder.encode("user123"))
-						.role(Role.USER)
-						.enabled(true)
-						.build();
-
-				repository.save(admin);
-			}
-		};
-	}
+//	@Bean
+//	CommandLineRunner iniciar(UserRepository repository,
+//							  PasswordEncoder encoder) {
+//		return args -> {
+//			if (repository.findByLogin("admin").isEmpty()) {
+//				User admin = User.builder()
+//						.username("admin")
+//						.password(encoder.encode("admin123"))
+//						.role(Role.ADMIN)
+//						.enabled(true)
+//						.build();
+//
+//				repository.save(admin);
+//			}
+//
+//			if (repository.findByLogin("user").isEmpty()) {
+//				User admin = User.builder()
+//						.username("user")
+//						.password(encoder.encode("user123"))
+//						.role(Role.USER)
+//						.enabled(true)
+//						.build();
+//
+//				repository.save(admin);
+//			}
+//		};
+//	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(UsermanagementApplication.class, args);
