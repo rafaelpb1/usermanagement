@@ -24,3 +24,8 @@ spring:
 
 server:
   port: 8090
+
+api:
+  security:
+    token:
+      secret: ${JWT_SECRET:my-secret-key}
