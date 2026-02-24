@@ -4,8 +4,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(HttpStatus.CONFLICT)
-public class VehicleNotAvailable extends RuntimeException {
-    public VehicleNotAvailable(String message) {
+public class VehicleNotAvailableException extends RuntimeException {
+    public VehicleNotAvailableException(String message) {
         super(message);
     }
 }
