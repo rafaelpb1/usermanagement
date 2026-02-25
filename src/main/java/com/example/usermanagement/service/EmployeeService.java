@@ -49,4 +49,15 @@ public class EmployeeService {
                 .map(mapper::toDTO)
                 .toList();
     }
+
+    @Transactional
+    public EmployeeResponseDTO updateEmployee(Long id, EmployeeRequestDTO dto) {
+        Employee employee = repository.findById(id).orElseThrow(() ->
+                new EmployeeNotFoundException("Employee not found."));
+
+        mapper.updateEntityFromDto(dto, employee);
+        Employee saved = repository.save(employee);
+
+        return mapper.toDTO(saved);
+    }
 }

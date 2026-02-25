@@ -2,6 +2,7 @@ package com.example.usermanagement.service;
 
 import com.example.usermanagement.dto.CustomerRequestDTO;
 import com.example.usermanagement.dto.CustomerResponseDTO;
+import com.example.usermanagement.dto.CustomerUpdateDTO;
 import com.example.usermanagement.exception.CustomerAlreadyRegisteredException;
 import com.example.usermanagement.exception.CustomerNotFoundException;
 import com.example.usermanagement.mappers.CustomerMapper;
@@ -9,9 +10,7 @@ import com.example.usermanagement.model.customers.Customer;
 import com.example.usermanagement.repository.CustomerRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -48,4 +47,16 @@ public class CustomerService {
                 .map(mapper::toDTO)
                 .toList();
     }
+
+    @Transactional
+    public CustomerResponseDTO updateCustomer(String document, CustomerUpdateDTO dto) {
+        Customer customer = repository.findById(document).orElseThrow(() ->
+                new CustomerNotFoundException("Customer not found."));
+
+        mapper.updateEntityFromDto(dto, customer);
+        Customer saved = repository.save(customer);
+
+        return mapper.toDTO(saved);
+    }
+
 }

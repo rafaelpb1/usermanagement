@@ -2,6 +2,7 @@ package com.example.usermanagement.service;
 
 import com.example.usermanagement.dto.VehicleRequestDTO;
 import com.example.usermanagement.dto.VehicleResponseDTO;
+import com.example.usermanagement.dto.VehicleUpdateDTO;
 import com.example.usermanagement.exception.VehicleAlreadyRegisteredException;
 import com.example.usermanagement.exception.VehicleNotFoundException;
 import com.example.usermanagement.mappers.VehicleMapper;
@@ -49,5 +50,16 @@ public class VehicleService {
                 .map(mapper::toDTO)
                 .toList();
 
+    }
+
+    @Transactional
+    public VehicleResponseDTO updateVehicle(String vin, VehicleUpdateDTO dto) {
+        Vehicle vehicle = repository.findById(vin).orElseThrow(() ->
+                new VehicleNotFoundException("Vehicle not found."));
+
+        mapper.updateEntityFromDto(dto, vehicle);
+        Vehicle saved = repository.save(vehicle);
+
+        return mapper.toDTO(saved);
     }
 }
