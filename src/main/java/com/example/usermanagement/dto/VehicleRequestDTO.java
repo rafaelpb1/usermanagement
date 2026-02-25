@@ -24,7 +24,6 @@ public record VehicleRequestDTO(
         @NotNull(message = "Price is required")
         @Positive(message = "Price must be greater than zero")
         BigDecimal price,
-        @NotNull(message = "Status is required")
         VehicleStatus status
 ) {
 }
