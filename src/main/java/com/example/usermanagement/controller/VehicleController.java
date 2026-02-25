@@ -3,6 +3,7 @@ package com.example.usermanagement.controller;
 import com.example.usermanagement.dto.EmployeeResponseDTO;
 import com.example.usermanagement.dto.VehicleRequestDTO;
 import com.example.usermanagement.dto.VehicleResponseDTO;
+import com.example.usermanagement.dto.VehicleUpdateDTO;
 import com.example.usermanagement.exception.ErrorResponse;
 import com.example.usermanagement.service.VehicleService;
 import jakarta.validation.Valid;
@@ -25,7 +26,8 @@ public class VehicleController {
     @PostMapping
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<VehicleResponseDTO> createVehicle(@RequestBody @Valid VehicleRequestDTO dto) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(service.create(dto));
+        VehicleResponseDTO response = service.create(dto);
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
     @DeleteMapping("/{vin}")
@@ -38,8 +40,16 @@ public class VehicleController {
     @GetMapping
     @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public ResponseEntity<List<VehicleResponseDTO>> listAllVehicles() {
-        List<VehicleResponseDTO> result = service.listAllVehicles();
+        List<VehicleResponseDTO> response = service.listAllVehicles();
 
-        return ResponseEntity.ok(result);
+        return ResponseEntity.ok(response);
+    }
+
+    @PutMapping("/{vin}")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<VehicleResponseDTO> updateVehicle(@PathVariable String vin,
+                                                            @RequestBody @Valid VehicleUpdateDTO dto ) {
+        VehicleResponseDTO response = service.updateVehicle(vin, dto);
+        return ResponseEntity.ok(response);
     }
 }
