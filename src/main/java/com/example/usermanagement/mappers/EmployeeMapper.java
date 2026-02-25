@@ -5,6 +5,7 @@ import com.example.usermanagement.dto.EmployeeResponseDTO;
 import com.example.usermanagement.model.employee.Employee;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.MappingTarget;
 
 @Mapper(componentModel = "spring")
 public interface EmployeeMapper {
@@ -13,4 +14,8 @@ public interface EmployeeMapper {
 
     @Mapping(source = "createdAt", target = "created_at")
     EmployeeResponseDTO toDTO(Employee entity);
+
+    @Mapping(target = "id", ignore = true)
+    @Mapping(target = "createdAt", ignore = true)
+    void updateEntityFromDto(EmployeeRequestDTO dto, @MappingTarget Employee entity);
 }
