@@ -1,5 +1,6 @@
 package com.example.usermanagement.security;
 
+import com.example.usermanagement.model.users.User;
 import com.example.usermanagement.repository.UserRepository;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
+import java.util.Optional;
 
 @Component
 @RequiredArgsConstructor
@@ -23,17 +25,28 @@ public class SecurityFilter extends OncePerRequestFilter {
 
     @Override
     protected void doFilterInternal(HttpServletRequest req, HttpServletResponse res, FilterChain filterChain) throws ServletException, IOException {
-        String token = this.recoverToken(req);
+        String token = recoverToken(req);
 
         if (token != null) {
             String login = service.validateToken(token);
-            UserDetails user = repository.findByLogin(login);
 
-            UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(user, null, user.getAuthorities());
-            SecurityContextHolder.getContext().setAuthentication(authentication);
+            if (login != null && !login.isBlank()) {
+
+                repository.findByLogin(login).ifPresent(user -> {
+
+                    UsernamePasswordAuthenticationToken authentication =
+                            new UsernamePasswordAuthenticationToken(
+                                    user,
+                                    null,
+                                    user.getAuthorities()
+                            );
+
+                    SecurityContextHolder.getContext()
+                            .setAuthentication(authentication);
+                });
+            }
         }
         filterChain.doFilter(req, res);
-
     }
 
     private String recoverToken(HttpServletRequest req) {
