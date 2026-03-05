@@ -1,7 +1,6 @@
 package com.example.usermanagement.controller;
 
 import com.example.usermanagement.dto.LoginRequestDTO;
-import com.example.usermanagement.dto.LoginResponseDTO;
 import com.example.usermanagement.dto.RegisterDTO;
 import com.example.usermanagement.service.AuthenticationService;
 import jakarta.validation.Valid;
