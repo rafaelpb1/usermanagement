@@ -38,6 +38,26 @@ public class GlobalExceptionHandler {
                         "Invalid JSON format or invalid enum value")));
     }
 
+    @ExceptionHandler(CustomerAlreadyRegisteredException.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public ErrorResponse handleCustomerAlreadyRegistered(CustomerAlreadyRegisteredException e) {
+        return new ErrorResponse(
+                HttpStatus.CONFLICT.value(),
+                e.getMessage(),
+                List.of()
+        );
+    }
+
+    @ExceptionHandler(CustomerNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ErrorResponse handleCustomerNotFound(CustomerNotFoundException e) {
+        return new ErrorResponse(
+                HttpStatus.NOT_FOUND.value(),
+                e.getMessage(),
+                List.of()
+        );
+    }
+
     @ExceptionHandler(RoleBusinessException.class)
     @ResponseStatus(HttpStatus.CONFLICT)
     public ErrorResponse handleBusinessRole(RoleBusinessException e) {
