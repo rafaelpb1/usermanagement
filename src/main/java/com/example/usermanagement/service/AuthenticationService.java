@@ -36,7 +36,7 @@ public class AuthenticationService {
     }
 
     public void register(RegisterDTO dto) {
-        if (repository.findByLogin(dto.login()) != null) {
+        if (repository.findByLogin(dto.login()).isPresent()) {
             throw new LoginAlreadyExists("Login already exists");
         }
 
