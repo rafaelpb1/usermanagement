@@ -40,8 +40,8 @@ public class SecurityConfig {
                         .anyRequest().authenticated()
 
                 )
-                .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
-                .httpBasic(Customizer.withDefaults());
+                .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class);
+//                .httpBasic(Customizer.withDefaults());
 
         return http.build();
     }
