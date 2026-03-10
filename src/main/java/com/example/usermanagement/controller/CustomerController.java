@@ -36,7 +36,7 @@ public class CustomerController {
             @ApiResponse(responseCode = "409", description = "Conflito: Documento já cadastrado"),
             @ApiResponse(responseCode = "500", description = "Erro interno no servidor")
     })
-    public ResponseEntity<CustomerResponseDTO> createCustomer(@RequestBody CustomerRequestDTO dto) {
+    public ResponseEntity<CustomerResponseDTO> createCustomer(@RequestBody @Valid CustomerRequestDTO dto) {
         return ResponseEntity.status(HttpStatus.CREATED).body(service.create(dto));
     }
 

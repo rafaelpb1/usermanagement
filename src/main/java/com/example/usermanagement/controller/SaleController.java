@@ -7,6 +7,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -33,7 +34,7 @@ public class SaleController {
             @ApiResponse(responseCode = "403", description = "Sem permissão (Requer ADMIN)"),
             @ApiResponse(responseCode = "500", description = "Erro interno no servidor")
     })
-    public ResponseEntity<?> createSale(@RequestBody SaleRequestDTO dto) {
+    public ResponseEntity<?> createSale(@RequestBody @Valid SaleRequestDTO dto) {
         return ResponseEntity.status(HttpStatus.CREATED).body(service.create(dto));
     }
 

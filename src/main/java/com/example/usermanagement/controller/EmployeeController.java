@@ -35,7 +35,7 @@ public class EmployeeController {
             @ApiResponse(responseCode = "409", description = "Conflito: Funcionário já cadastrado"),
             @ApiResponse(responseCode = "500", description = "Erro interno no servidor")
     })
-    public ResponseEntity<EmployeeResponseDTO> createEmployee(@RequestBody EmployeeRequestDTO dto) {
+    public ResponseEntity<EmployeeResponseDTO> createEmployee(@RequestBody @Valid EmployeeRequestDTO dto) {
         EmployeeResponseDTO response = service.create(dto);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
