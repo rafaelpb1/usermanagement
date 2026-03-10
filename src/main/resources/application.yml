@@ -29,3 +29,10 @@ api:
   security:
     token:
       secret: ${JWT_SECRET:my-secret-key}
+
+springdoc:
+  override-with-generic-response-false: false
+
+logging:
+  file:
+    name: app.log
