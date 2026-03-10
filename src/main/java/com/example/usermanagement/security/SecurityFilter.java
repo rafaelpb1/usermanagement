@@ -31,8 +31,13 @@ public class SecurityFilter extends OncePerRequestFilter {
             String login = service.validateToken(token);
 
             if (login != null && !login.isBlank()) {
+                // Log para debug: saber se o login foi extraído do token
+                System.out.println("DEBUG: Login extraído do token: " + login);
 
-                repository.findByLogin(login).ifPresent(user -> {
+                repository.findByLogin(login).ifPresentOrElse(user -> {
+                    // Log para debug: saber as permissões que estão sendo carregadas
+                    System.out.println("DEBUG: Usuário encontrado: " + user.getLogin());
+                    System.out.println("DEBUG: Authorities carregadas: " + user.getAuthorities());
 
                     UsernamePasswordAuthenticationToken authentication =
                             new UsernamePasswordAuthenticationToken(
@@ -41,11 +46,19 @@ public class SecurityFilter extends OncePerRequestFilter {
                                     user.getAuthorities()
                             );
 
-                    SecurityContextHolder.getContext()
-                            .setAuthentication(authentication);
-                });
+                    SecurityContextHolder.getContext().setAuthentication(authentication);
+
+                }, () -> System.out.println("DEBUG: ERRO - Usuário com login '" + login + "' não existe no banco!"));
+            } else {
+                System.out.println("DEBUG: ERRO - Token inválido ou expirado.");
             }
         }
+
+        // Verifica se ao final do filtro o contexto está preenchido
+        if (SecurityContextHolder.getContext().getAuthentication() == null) {
+            System.out.println("DEBUG: Requisição prosseguindo SEM autenticação.");
+        }
+
         filterChain.doFilter(req, res);
     }
 
