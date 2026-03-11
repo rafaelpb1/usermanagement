@@ -166,3 +166,453 @@
 2026-03-09T12:56:20.580-03:00  INFO 11712 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-03-09T12:56:20.710-03:00  INFO 11712 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2026-03-09T12:56:20.776-03:00  INFO 11712 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-03-10T08:49:34.643-03:00  INFO 19740 --- [main] c.e.u.UsermanagementApplication          : Starting UsermanagementApplication using Java 21.0.10 with PID 19740 (C:\Users\rafael.souza.UNIMEDJP\IdeaProjects\usermanagement\usermanagement\target\classes started by rafael.souza in C:\Users\rafael.souza.UNIMEDJP\IdeaProjects\usermanagement\usermanagement)
+2026-03-10T08:49:34.656-03:00  INFO 19740 --- [main] c.e.u.UsermanagementApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-03-10T08:49:36.969-03:00  INFO 19740 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-10T08:49:37.170-03:00  INFO 19740 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 177 ms. Found 5 JPA repository interfaces.
+2026-03-10T08:49:38.845-03:00  INFO 19740 --- [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8090 (http)
+2026-03-10T08:49:38.890-03:00  INFO 19740 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-10T08:49:38.892-03:00  INFO 19740 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-03-10T08:49:39.054-03:00  INFO 19740 --- [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 4283 ms
+2026-03-10T08:49:39.194-03:00  INFO 19740 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-10T08:49:39.544-03:00  INFO 19740 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:usermanagement user=SA
+2026-03-10T08:49:39.547-03:00  INFO 19740 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-10T08:49:39.745-03:00  INFO 19740 --- [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-10T08:49:39.840-03:00  INFO 19740 --- [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-03-10T08:49:40.643-03:00  INFO 19740 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-10T08:49:40.721-03:00  WARN 19740 --- [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-10T08:49:40.747-03:00  INFO 19740 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:usermanagement]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: USERMANAGEMENT/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-10T08:49:42.236-03:00  INFO 19740 --- [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-10T08:49:42.355-03:00  INFO 19740 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-10T08:49:42.472-03:00  INFO 19740 --- [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-10T08:49:42.969-03:00  INFO 19740 --- [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name authorizationService
+2026-03-10T08:49:43.421-03:00  WARN 19740 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-10T08:49:44.294-03:00  INFO 19740 --- [main] o.s.b.h.a.H2ConsoleAutoConfiguration     : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:usermanagement'
+2026-03-10T08:49:44.444-03:00  INFO 19740 --- [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8090 (http) with context path '/'
+2026-03-10T08:49:44.453-03:00  INFO 19740 --- [main] c.e.u.UsermanagementApplication          : Started UsermanagementApplication in 10.708 seconds (process running for 11.697)
+2026-03-10T09:01:24.314-03:00  INFO 9720 --- [main] c.e.u.UsermanagementApplication          : Starting UsermanagementApplication using Java 21.0.10 with PID 9720 (C:\Users\rafael.souza.UNIMEDJP\IdeaProjects\usermanagement\usermanagement\target\classes started by rafael.souza in C:\Users\rafael.souza.UNIMEDJP\IdeaProjects\usermanagement\usermanagement)
+2026-03-10T09:01:24.321-03:00  INFO 9720 --- [main] c.e.u.UsermanagementApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-03-10T09:01:27.105-03:00  INFO 9720 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-10T09:01:27.255-03:00  INFO 9720 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 132 ms. Found 5 JPA repository interfaces.
+2026-03-10T09:01:28.786-03:00  INFO 9720 --- [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8090 (http)
+2026-03-10T09:01:28.835-03:00  INFO 9720 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-10T09:01:28.838-03:00  INFO 9720 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-03-10T09:01:29.081-03:00  INFO 9720 --- [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 4582 ms
+2026-03-10T09:01:29.232-03:00  INFO 9720 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-10T09:01:29.784-03:00  INFO 9720 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:usermanagement user=SA
+2026-03-10T09:01:29.788-03:00  INFO 9720 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-10T09:01:30.057-03:00  INFO 9720 --- [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-10T09:01:30.166-03:00  INFO 9720 --- [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-03-10T09:01:31.155-03:00  INFO 9720 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-10T09:01:31.252-03:00  WARN 9720 --- [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-10T09:01:31.289-03:00  INFO 9720 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:usermanagement]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: USERMANAGEMENT/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-10T09:01:32.924-03:00  INFO 9720 --- [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-10T09:01:33.096-03:00  INFO 9720 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-10T09:01:33.232-03:00  INFO 9720 --- [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-10T09:01:33.701-03:00  INFO 9720 --- [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name authorizationService
+2026-03-10T09:01:34.160-03:00  WARN 9720 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-10T09:01:35.520-03:00  INFO 9720 --- [main] o.s.b.h.a.H2ConsoleAutoConfiguration     : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:usermanagement'
+2026-03-10T09:01:35.704-03:00  INFO 9720 --- [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8090 (http) with context path '/'
+2026-03-10T09:01:35.716-03:00  INFO 9720 --- [main] c.e.u.UsermanagementApplication          : Started UsermanagementApplication in 12.436 seconds (process running for 13.293)
+2026-03-10T09:02:12.054-03:00  INFO 9720 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-10T09:02:12.055-03:00  INFO 9720 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-10T09:02:12.059-03:00  INFO 9720 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-03-10T10:48:26.396-03:00  INFO 3724 --- [main] c.e.u.UsermanagementApplication          : Starting UsermanagementApplication using Java 21.0.10 with PID 3724 (C:\Users\rafael.souza.UNIMEDJP\IdeaProjects\usermanagement\usermanagement\target\classes started by rafael.souza in C:\Users\rafael.souza.UNIMEDJP\IdeaProjects\usermanagement\usermanagement)
+2026-03-10T10:48:26.407-03:00  INFO 3724 --- [main] c.e.u.UsermanagementApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-03-10T10:48:29.648-03:00  INFO 3724 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-10T10:48:29.888-03:00  INFO 3724 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 205 ms. Found 5 JPA repository interfaces.
+2026-03-10T10:48:32.107-03:00  INFO 3724 --- [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8090 (http)
+2026-03-10T10:48:32.146-03:00  INFO 3724 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-10T10:48:32.148-03:00  INFO 3724 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-03-10T10:48:32.316-03:00  INFO 3724 --- [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 5671 ms
+2026-03-10T10:48:32.480-03:00  INFO 3724 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-10T10:48:32.874-03:00  INFO 3724 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:usermanagement user=SA
+2026-03-10T10:48:32.877-03:00  INFO 3724 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-10T10:48:33.070-03:00  INFO 3724 --- [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-10T10:48:33.156-03:00  INFO 3724 --- [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-03-10T10:48:33.916-03:00  INFO 3724 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-10T10:48:33.992-03:00  WARN 3724 --- [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-10T10:48:34.020-03:00  INFO 3724 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:usermanagement]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: USERMANAGEMENT/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-10T10:48:35.556-03:00  INFO 3724 --- [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-10T10:48:35.783-03:00  INFO 3724 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-10T10:48:35.972-03:00  INFO 3724 --- [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-10T10:48:36.456-03:00  INFO 3724 --- [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name authorizationService
+2026-03-10T10:48:36.955-03:00  WARN 3724 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-10T10:48:38.051-03:00  INFO 3724 --- [main] o.s.b.h.a.H2ConsoleAutoConfiguration     : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:usermanagement'
+2026-03-10T10:48:38.216-03:00  INFO 3724 --- [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8090 (http) with context path '/'
+2026-03-10T10:48:38.226-03:00  INFO 3724 --- [main] c.e.u.UsermanagementApplication          : Started UsermanagementApplication in 12.936 seconds (process running for 13.822)
+2026-03-10T10:51:07.718-03:00  INFO 8160 --- [main] c.e.u.UsermanagementApplication          : Starting UsermanagementApplication using Java 21.0.10 with PID 8160 (C:\Users\rafael.souza.UNIMEDJP\IdeaProjects\usermanagement\usermanagement\target\classes started by rafael.souza in C:\Users\rafael.souza.UNIMEDJP\IdeaProjects\usermanagement\usermanagement)
+2026-03-10T10:51:07.740-03:00  INFO 8160 --- [main] c.e.u.UsermanagementApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-03-10T10:51:10.121-03:00  INFO 8160 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-10T10:51:10.284-03:00  INFO 8160 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 141 ms. Found 5 JPA repository interfaces.
+2026-03-10T10:51:11.896-03:00  INFO 8160 --- [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8090 (http)
+2026-03-10T10:51:11.961-03:00  INFO 8160 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-10T10:51:11.963-03:00  INFO 8160 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-03-10T10:51:12.171-03:00  INFO 8160 --- [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 4196 ms
+2026-03-10T10:51:12.340-03:00  INFO 8160 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-10T10:51:12.621-03:00  INFO 8160 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:usermanagement user=SA
+2026-03-10T10:51:12.624-03:00  INFO 8160 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-10T10:51:12.817-03:00  INFO 8160 --- [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-10T10:51:12.903-03:00  INFO 8160 --- [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-03-10T10:51:13.739-03:00  INFO 8160 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-10T10:51:13.838-03:00  WARN 8160 --- [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-10T10:51:13.864-03:00  INFO 8160 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:usermanagement]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: USERMANAGEMENT/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-10T10:51:15.353-03:00  INFO 8160 --- [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-10T10:51:15.590-03:00  INFO 8160 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-10T10:51:15.767-03:00  INFO 8160 --- [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-10T10:51:16.534-03:00  INFO 8160 --- [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name authorizationService
+2026-03-10T10:51:17.497-03:00  WARN 8160 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-10T10:51:18.876-03:00  INFO 8160 --- [main] o.s.b.h.a.H2ConsoleAutoConfiguration     : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:usermanagement'
+2026-03-10T10:51:19.052-03:00  INFO 8160 --- [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8090 (http) with context path '/'
+2026-03-10T10:51:19.065-03:00  INFO 8160 --- [main] c.e.u.UsermanagementApplication          : Started UsermanagementApplication in 12.826 seconds (process running for 13.941)
+2026-03-10T11:18:07.675-03:00  INFO 4556 --- [main] c.e.u.UsermanagementApplication          : Starting UsermanagementApplication using Java 21.0.10 with PID 4556 (C:\Users\rafael.souza.UNIMEDJP\IdeaProjects\usermanagement\usermanagement\target\classes started by rafael.souza in C:\Users\rafael.souza.UNIMEDJP\IdeaProjects\usermanagement\usermanagement)
+2026-03-10T11:18:07.681-03:00  INFO 4556 --- [main] c.e.u.UsermanagementApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-03-10T11:18:09.767-03:00  INFO 4556 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-10T11:18:09.909-03:00  INFO 4556 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 123 ms. Found 5 JPA repository interfaces.
+2026-03-10T11:18:11.575-03:00  INFO 4556 --- [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8090 (http)
+2026-03-10T11:18:11.610-03:00  INFO 4556 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-10T11:18:11.611-03:00  INFO 4556 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-03-10T11:18:11.752-03:00  INFO 4556 --- [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 3967 ms
+2026-03-10T11:18:11.866-03:00  INFO 4556 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-10T11:18:12.294-03:00  INFO 4556 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:usermanagement user=SA
+2026-03-10T11:18:12.298-03:00  INFO 4556 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-10T11:18:12.514-03:00  INFO 4556 --- [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-10T11:18:12.638-03:00  INFO 4556 --- [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-03-10T11:18:13.429-03:00  INFO 4556 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-10T11:18:13.528-03:00  WARN 4556 --- [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-10T11:18:13.551-03:00  INFO 4556 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:usermanagement]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: USERMANAGEMENT/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-10T11:18:14.976-03:00  INFO 4556 --- [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-10T11:18:15.100-03:00  INFO 4556 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-10T11:18:15.205-03:00  INFO 4556 --- [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-10T11:18:15.599-03:00  INFO 4556 --- [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name authorizationService
+2026-03-10T11:18:16.125-03:00  WARN 4556 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-10T11:18:17.477-03:00  INFO 4556 --- [main] o.s.b.h.a.H2ConsoleAutoConfiguration     : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:usermanagement'
+2026-03-10T11:18:17.629-03:00  INFO 4556 --- [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8090 (http) with context path '/'
+2026-03-10T11:18:17.637-03:00  INFO 4556 --- [main] c.e.u.UsermanagementApplication          : Started UsermanagementApplication in 10.757 seconds (process running for 11.885)
+2026-03-10T11:19:05.901-03:00  INFO 11276 --- [main] c.e.u.UsermanagementApplication          : Starting UsermanagementApplication using Java 21.0.10 with PID 11276 (C:\Users\rafael.souza.UNIMEDJP\IdeaProjects\usermanagement\usermanagement\target\classes started by rafael.souza in C:\Users\rafael.souza.UNIMEDJP\IdeaProjects\usermanagement\usermanagement)
+2026-03-10T11:19:05.910-03:00  INFO 11276 --- [main] c.e.u.UsermanagementApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-03-10T11:19:09.035-03:00  INFO 11276 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-10T11:19:09.265-03:00  INFO 11276 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 214 ms. Found 5 JPA repository interfaces.
+2026-03-10T11:19:10.654-03:00  INFO 11276 --- [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8090 (http)
+2026-03-10T11:19:10.688-03:00  INFO 11276 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-10T11:19:10.689-03:00  INFO 11276 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-03-10T11:19:10.826-03:00  INFO 11276 --- [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 4798 ms
+2026-03-10T11:19:10.958-03:00  INFO 11276 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-10T11:19:11.335-03:00  INFO 11276 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:usermanagement user=SA
+2026-03-10T11:19:11.340-03:00  INFO 11276 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-10T11:19:11.698-03:00  INFO 11276 --- [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-10T11:19:11.861-03:00  INFO 11276 --- [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-03-10T11:19:12.626-03:00  INFO 11276 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-10T11:19:12.694-03:00  WARN 11276 --- [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-10T11:19:12.718-03:00  INFO 11276 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:usermanagement]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: USERMANAGEMENT/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-10T11:19:14.104-03:00  INFO 11276 --- [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-10T11:19:14.274-03:00  INFO 11276 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-10T11:19:14.376-03:00  INFO 11276 --- [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-10T11:19:15.125-03:00  INFO 11276 --- [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name authorizationService
+2026-03-10T11:19:15.768-03:00  WARN 11276 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-10T11:19:17.364-03:00  INFO 11276 --- [main] o.s.b.h.a.H2ConsoleAutoConfiguration     : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:usermanagement'
+2026-03-10T11:19:17.502-03:00  INFO 11276 --- [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8090 (http) with context path '/'
+2026-03-10T11:19:17.513-03:00  INFO 11276 --- [main] c.e.u.UsermanagementApplication          : Started UsermanagementApplication in 12.684 seconds (process running for 13.695)
+2026-03-10T11:19:26.051-03:00  INFO 11276 --- [http-nio-8090-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-10T11:19:26.054-03:00  INFO 11276 --- [http-nio-8090-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-10T11:19:26.062-03:00  INFO 11276 --- [http-nio-8090-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2026-03-10T11:26:04.534-03:00  INFO 6600 --- [main] c.e.u.UsermanagementApplication          : Starting UsermanagementApplication using Java 21.0.10 with PID 6600 (C:\Users\rafael.souza.UNIMEDJP\IdeaProjects\usermanagement\usermanagement\target\classes started by rafael.souza in C:\Users\rafael.souza.UNIMEDJP\IdeaProjects\usermanagement\usermanagement)
+2026-03-10T11:26:04.550-03:00  INFO 6600 --- [main] c.e.u.UsermanagementApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-03-10T11:26:08.042-03:00  INFO 6600 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-10T11:26:08.296-03:00  INFO 6600 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 222 ms. Found 5 JPA repository interfaces.
+2026-03-10T11:26:11.691-03:00  INFO 6600 --- [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8090 (http)
+2026-03-10T11:26:11.752-03:00  INFO 6600 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-10T11:26:11.756-03:00  INFO 6600 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-03-10T11:26:12.057-03:00  INFO 6600 --- [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 7289 ms
+2026-03-10T11:26:12.240-03:00  INFO 6600 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-10T11:26:12.729-03:00  INFO 6600 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:usermanagement user=SA
+2026-03-10T11:26:12.733-03:00  INFO 6600 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-10T11:26:13.117-03:00  INFO 6600 --- [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-10T11:26:13.304-03:00  INFO 6600 --- [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-03-10T11:26:16.249-03:00  INFO 6600 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-10T11:26:16.345-03:00  WARN 6600 --- [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-10T11:26:16.386-03:00  INFO 6600 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:usermanagement]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: USERMANAGEMENT/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-10T11:26:18.293-03:00  INFO 6600 --- [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-10T11:26:18.456-03:00  INFO 6600 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-10T11:26:18.644-03:00  INFO 6600 --- [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-10T11:26:19.363-03:00  INFO 6600 --- [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name authorizationService
+2026-03-10T11:26:20.239-03:00  WARN 6600 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-10T11:26:21.677-03:00  INFO 6600 --- [main] o.s.b.h.a.H2ConsoleAutoConfiguration     : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:usermanagement'
+2026-03-10T11:26:21.859-03:00  INFO 6600 --- [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8090 (http) with context path '/'
+2026-03-10T11:26:21.871-03:00  INFO 6600 --- [main] c.e.u.UsermanagementApplication          : Started UsermanagementApplication in 19.997 seconds (process running for 21.146)
+2026-03-10T11:26:31.781-03:00  INFO 6600 --- [http-nio-8090-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-10T11:26:31.783-03:00  INFO 6600 --- [http-nio-8090-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-10T11:26:31.786-03:00  INFO 6600 --- [http-nio-8090-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-03-10T11:35:50.777-03:00  INFO 12416 --- [main] c.e.u.UsermanagementApplication          : Starting UsermanagementApplication using Java 21.0.10 with PID 12416 (C:\Users\rafael.souza.UNIMEDJP\IdeaProjects\usermanagement\usermanagement\target\classes started by rafael.souza in C:\Users\rafael.souza.UNIMEDJP\IdeaProjects\usermanagement\usermanagement)
+2026-03-10T11:35:50.785-03:00  INFO 12416 --- [main] c.e.u.UsermanagementApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-03-10T11:35:52.956-03:00  INFO 12416 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-10T11:35:53.114-03:00  INFO 12416 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 141 ms. Found 5 JPA repository interfaces.
+2026-03-10T11:35:54.617-03:00  INFO 12416 --- [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8090 (http)
+2026-03-10T11:35:54.655-03:00  INFO 12416 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-10T11:35:54.656-03:00  INFO 12416 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-03-10T11:35:54.822-03:00  INFO 12416 --- [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 3921 ms
+2026-03-10T11:35:54.973-03:00  INFO 12416 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-10T11:35:55.330-03:00  INFO 12416 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:usermanagement user=SA
+2026-03-10T11:35:55.334-03:00  INFO 12416 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-10T11:35:55.671-03:00  INFO 12416 --- [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-10T11:35:55.881-03:00  INFO 12416 --- [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-03-10T11:35:56.734-03:00  INFO 12416 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-10T11:35:56.834-03:00  WARN 12416 --- [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-10T11:35:56.867-03:00  INFO 12416 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:usermanagement]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: USERMANAGEMENT/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-10T11:35:58.565-03:00  INFO 12416 --- [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-10T11:35:58.677-03:00  INFO 12416 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-10T11:35:58.798-03:00  INFO 12416 --- [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-10T11:35:59.198-03:00  INFO 12416 --- [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name authorizationService
+2026-03-10T11:35:59.781-03:00  WARN 12416 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-10T11:36:01.079-03:00  INFO 12416 --- [main] o.s.b.h.a.H2ConsoleAutoConfiguration     : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:usermanagement'
+2026-03-10T11:36:01.253-03:00  INFO 12416 --- [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8090 (http) with context path '/'
+2026-03-10T11:36:01.266-03:00  INFO 12416 --- [main] c.e.u.UsermanagementApplication          : Started UsermanagementApplication in 12.865 seconds (process running for 14.087)
+2026-03-10T11:36:18.527-03:00  INFO 12416 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-10T11:36:18.528-03:00  INFO 12416 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-10T11:36:18.532-03:00  INFO 12416 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2026-03-10T11:42:49.497-03:00  INFO 9268 --- [main] c.e.u.UsermanagementApplication          : Starting UsermanagementApplication using Java 21.0.10 with PID 9268 (C:\Users\rafael.souza.UNIMEDJP\IdeaProjects\usermanagement\usermanagement\target\classes started by rafael.souza in C:\Users\rafael.souza.UNIMEDJP\IdeaProjects\usermanagement\usermanagement)
+2026-03-10T11:42:49.503-03:00  INFO 9268 --- [main] c.e.u.UsermanagementApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-03-10T11:42:51.597-03:00  INFO 9268 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-10T11:42:51.782-03:00  INFO 9268 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 156 ms. Found 5 JPA repository interfaces.
+2026-03-10T11:42:53.367-03:00  INFO 9268 --- [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8090 (http)
+2026-03-10T11:42:53.399-03:00  INFO 9268 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-10T11:42:53.402-03:00  INFO 9268 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-03-10T11:42:53.549-03:00  INFO 9268 --- [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 3943 ms
+2026-03-10T11:42:53.689-03:00  INFO 9268 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-10T11:42:54.119-03:00  INFO 9268 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:usermanagement user=SA
+2026-03-10T11:42:54.125-03:00  INFO 9268 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-10T11:42:54.736-03:00  INFO 9268 --- [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-10T11:42:54.852-03:00  INFO 9268 --- [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-03-10T11:42:55.604-03:00  INFO 9268 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-10T11:42:55.689-03:00  WARN 9268 --- [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-10T11:42:55.712-03:00  INFO 9268 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:usermanagement]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: USERMANAGEMENT/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-10T11:42:57.103-03:00  INFO 9268 --- [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-10T11:42:57.231-03:00  INFO 9268 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-10T11:42:57.361-03:00  INFO 9268 --- [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-10T11:42:57.814-03:00  INFO 9268 --- [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name authorizationService
+2026-03-10T11:42:58.274-03:00  WARN 9268 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-10T11:42:59.197-03:00  INFO 9268 --- [main] o.s.b.h.a.H2ConsoleAutoConfiguration     : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:usermanagement'
+2026-03-10T11:42:59.341-03:00  INFO 9268 --- [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8090 (http) with context path '/'
+2026-03-10T11:42:59.351-03:00  INFO 9268 --- [main] c.e.u.UsermanagementApplication          : Started UsermanagementApplication in 10.7 seconds (process running for 11.479)
+2026-03-10T11:43:08.292-03:00  INFO 9268 --- [http-nio-8090-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-10T11:43:08.293-03:00  INFO 9268 --- [http-nio-8090-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-10T11:43:08.297-03:00  INFO 9268 --- [http-nio-8090-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2026-03-10T11:43:09.742-03:00  WARN 9268 --- [http-nio-8090-exec-4] org.hibernate.orm.jdbc.error             : HHH000247: ErrorCode: 23505, SQLState: 23505
+2026-03-10T11:43:09.743-03:00  WARN 9268 --- [http-nio-8090-exec-4] org.hibernate.orm.jdbc.error             : Unique index or primary key violation: "PUBLIC.CONSTRAINT_4D INDEX PUBLIC.CONSTRAINT_4D_INDEX_6 ON PUBLIC.USERS(LOGIN NULLS FIRST) VALUES ( /* 1 */ 'admin' )"; SQL statement:
+insert into users (login,password,role,id) values (?,?,?,?) [23505-240]
+2026-03-10T11:54:06.441-03:00  INFO 13040 --- [main] c.e.u.UsermanagementApplication          : Starting UsermanagementApplication using Java 21.0.10 with PID 13040 (C:\Users\rafael.souza.UNIMEDJP\IdeaProjects\usermanagement\usermanagement\target\classes started by rafael.souza in C:\Users\rafael.souza.UNIMEDJP\IdeaProjects\usermanagement\usermanagement)
+2026-03-10T11:54:06.450-03:00  INFO 13040 --- [main] c.e.u.UsermanagementApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-03-10T11:54:08.544-03:00  INFO 13040 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-10T11:54:08.730-03:00  INFO 13040 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 161 ms. Found 5 JPA repository interfaces.
+2026-03-10T11:54:10.391-03:00  INFO 13040 --- [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8090 (http)
+2026-03-10T11:54:10.433-03:00  INFO 13040 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-10T11:54:10.436-03:00  INFO 13040 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-03-10T11:54:10.583-03:00  INFO 13040 --- [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 4009 ms
+2026-03-10T11:54:10.730-03:00  INFO 13040 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-10T11:54:11.075-03:00  INFO 13040 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:usermanagement user=SA
+2026-03-10T11:54:11.079-03:00  INFO 13040 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-10T11:54:11.362-03:00  INFO 13040 --- [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-10T11:54:11.462-03:00  INFO 13040 --- [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-03-10T11:54:12.168-03:00  INFO 13040 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-10T11:54:12.259-03:00  WARN 13040 --- [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-10T11:54:12.284-03:00  INFO 13040 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:usermanagement]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: USERMANAGEMENT/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-10T11:54:13.805-03:00  INFO 13040 --- [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-10T11:54:13.960-03:00  INFO 13040 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-10T11:54:14.070-03:00  INFO 13040 --- [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-10T11:54:14.429-03:00  INFO 13040 --- [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name authorizationService
+2026-03-10T11:54:14.836-03:00  WARN 13040 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-10T11:54:16.079-03:00  INFO 13040 --- [main] o.s.b.h.a.H2ConsoleAutoConfiguration     : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:usermanagement'
+2026-03-10T11:54:16.265-03:00  INFO 13040 --- [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8090 (http) with context path '/'
+2026-03-10T11:54:16.275-03:00  INFO 13040 --- [main] c.e.u.UsermanagementApplication          : Started UsermanagementApplication in 10.588 seconds (process running for 11.348)
+2026-03-10T11:54:27.301-03:00  INFO 13040 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-10T11:54:27.303-03:00  INFO 13040 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-10T11:54:27.308-03:00  INFO 13040 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-03-10T11:54:28.547-03:00  WARN 13040 --- [http-nio-8090-exec-3] org.hibernate.orm.jdbc.error             : HHH000247: ErrorCode: 23505, SQLState: 23505
+2026-03-10T11:54:28.549-03:00  WARN 13040 --- [http-nio-8090-exec-3] org.hibernate.orm.jdbc.error             : Unique index or primary key violation: "PUBLIC.CONSTRAINT_4D INDEX PUBLIC.CONSTRAINT_4D_INDEX_6 ON PUBLIC.USERS(LOGIN NULLS FIRST) VALUES ( /* 1 */ 'admin' )"; SQL statement:
+insert into users (login,password,role,id) values (?,?,?,?) [23505-240]
+2026-03-10T11:58:22.712-03:00  INFO 17552 --- [main] c.e.u.UsermanagementApplication          : Starting UsermanagementApplication using Java 21.0.10 with PID 17552 (C:\Users\rafael.souza.UNIMEDJP\IdeaProjects\usermanagement\usermanagement\target\classes started by rafael.souza in C:\Users\rafael.souza.UNIMEDJP\IdeaProjects\usermanagement\usermanagement)
+2026-03-10T11:58:22.724-03:00  INFO 17552 --- [main] c.e.u.UsermanagementApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-03-10T11:58:25.454-03:00  INFO 17552 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-10T11:58:25.587-03:00  INFO 17552 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 105 ms. Found 5 JPA repository interfaces.
+2026-03-10T11:58:26.688-03:00  INFO 17552 --- [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8090 (http)
+2026-03-10T11:58:26.715-03:00  INFO 17552 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-10T11:58:26.717-03:00  INFO 17552 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-03-10T11:58:26.854-03:00  INFO 17552 --- [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 3782 ms
+2026-03-10T11:58:26.976-03:00  INFO 17552 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-10T11:58:27.373-03:00  INFO 17552 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:usermanagement user=SA
+2026-03-10T11:58:27.377-03:00  INFO 17552 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-10T11:58:27.583-03:00  INFO 17552 --- [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-10T11:58:27.686-03:00  INFO 17552 --- [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-03-10T11:58:28.364-03:00  INFO 17552 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-10T11:58:28.443-03:00  WARN 17552 --- [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-10T11:58:28.469-03:00  INFO 17552 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:usermanagement]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: USERMANAGEMENT/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-10T11:58:29.980-03:00  INFO 17552 --- [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-10T11:58:30.102-03:00  INFO 17552 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-10T11:58:30.208-03:00  INFO 17552 --- [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-10T11:58:30.582-03:00  INFO 17552 --- [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name authorizationService
+2026-03-10T11:58:30.913-03:00  WARN 17552 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-10T11:58:31.824-03:00  INFO 17552 --- [main] o.s.b.h.a.H2ConsoleAutoConfiguration     : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:usermanagement'
+2026-03-10T11:58:31.970-03:00  INFO 17552 --- [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8090 (http) with context path '/'
+2026-03-10T11:58:31.979-03:00  INFO 17552 --- [main] c.e.u.UsermanagementApplication          : Started UsermanagementApplication in 10.088 seconds (process running for 10.992)
+2026-03-10T11:58:35.416-03:00  INFO 17552 --- [http-nio-8090-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-10T11:58:35.417-03:00  INFO 17552 --- [http-nio-8090-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-10T11:58:35.426-03:00  INFO 17552 --- [http-nio-8090-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2026-03-10T12:07:47.574-03:00  INFO 25000 --- [main] c.e.u.UsermanagementApplication          : Starting UsermanagementApplication using Java 21.0.10 with PID 25000 (C:\Users\rafael.souza.UNIMEDJP\IdeaProjects\usermanagement\usermanagement\target\classes started by rafael.souza in C:\Users\rafael.souza.UNIMEDJP\IdeaProjects\usermanagement\usermanagement)
+2026-03-10T12:07:47.588-03:00  INFO 25000 --- [main] c.e.u.UsermanagementApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-03-10T12:07:49.861-03:00  INFO 25000 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-10T12:07:50.057-03:00  INFO 25000 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 174 ms. Found 5 JPA repository interfaces.
+2026-03-10T12:07:51.914-03:00  INFO 25000 --- [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8090 (http)
+2026-03-10T12:07:51.954-03:00  INFO 25000 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-10T12:07:51.956-03:00  INFO 25000 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-03-10T12:07:52.154-03:00  INFO 25000 --- [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 4389 ms
+2026-03-10T12:07:52.501-03:00  INFO 25000 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-10T12:07:52.943-03:00  INFO 25000 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:usermanagement user=SA
+2026-03-10T12:07:52.946-03:00  INFO 25000 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-10T12:07:53.169-03:00  INFO 25000 --- [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-10T12:07:53.341-03:00  INFO 25000 --- [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-03-10T12:07:54.149-03:00  INFO 25000 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-10T12:07:54.269-03:00  WARN 25000 --- [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-10T12:07:54.303-03:00  INFO 25000 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:usermanagement]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: USERMANAGEMENT/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-10T12:07:56.015-03:00  INFO 25000 --- [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-10T12:07:56.137-03:00  INFO 25000 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-10T12:07:56.249-03:00  INFO 25000 --- [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-10T12:07:56.613-03:00  INFO 25000 --- [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name authorizationService
+2026-03-10T12:07:56.993-03:00  WARN 25000 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-10T12:07:58.137-03:00  INFO 25000 --- [main] o.s.b.h.a.H2ConsoleAutoConfiguration     : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:usermanagement'
+2026-03-10T12:07:58.282-03:00  INFO 25000 --- [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8090 (http) with context path '/'
+2026-03-10T12:07:58.291-03:00  INFO 25000 --- [main] c.e.u.UsermanagementApplication          : Started UsermanagementApplication in 11.728 seconds (process running for 12.772)
+2026-03-10T12:08:06.711-03:00  INFO 25000 --- [http-nio-8090-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-10T12:08:06.712-03:00  INFO 25000 --- [http-nio-8090-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-10T12:08:06.716-03:00  INFO 25000 --- [http-nio-8090-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
