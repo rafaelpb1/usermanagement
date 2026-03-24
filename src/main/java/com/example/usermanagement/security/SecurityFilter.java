@@ -39,12 +39,7 @@ public class SecurityFilter extends OncePerRequestFilter {
                     System.out.println("DEBUG: Usuário encontrado: " + user.getLogin());
                     System.out.println("DEBUG: Authorities carregadas: " + user.getAuthorities());
 
-                    UsernamePasswordAuthenticationToken authentication =
-                            new UsernamePasswordAuthenticationToken(
-                                    user,
-                                    null,
-                                    user.getAuthorities()
-                            );
+                    CustomAuthentication authentication = new CustomAuthentication(user);
 
                     SecurityContextHolder.getContext().setAuthentication(authentication);
 
