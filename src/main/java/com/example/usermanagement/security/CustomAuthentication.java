@@ -10,21 +10,27 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Getter
 public class CustomAuthentication implements Authentication {
 
     private final User user;
+    private boolean authenticated = true;
 
     @Override
     public Collection<GrantedAuthority> getAuthorities() {
-        return List.of(new SimpleGrantedAuthority("ROLE_" + user.getRole().name()));
+        return this.user
+                .getRoles()
+                .stream()
+                .map(SimpleGrantedAuthority::new)
+                .collect(Collectors.toList());
     }
 
     @Override
     public @Nullable Object getCredentials() {
-        return null;
+        return user.getPassword();
     }
 
     @Override
@@ -34,21 +40,21 @@ public class CustomAuthentication implements Authentication {
 
     @Override
     public @Nullable Object getPrincipal() {
-        return null;
+        return user;
     }
 
     @Override
     public boolean isAuthenticated() {
-        return false;
+        return authenticated;
     }
 
     @Override
     public void setAuthenticated(boolean isAuthenticated) throws IllegalArgumentException {
-
+        this.authenticated = isAuthenticated;
     }
 
     @Override
     public String getName() {
-        return "";
+        return user.getLogin();
     }
 }

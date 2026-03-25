@@ -14,6 +14,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class AuthenticationService {
@@ -42,11 +44,12 @@ public class AuthenticationService {
 
         String encode = passwordEncoder.encode(dto.password());
 
-        User user = new User(
-                dto.login(),
-                encode,
-                dto.role()
-        );
+        User user = User.builder()
+                .login(dto.login())
+                .password(encode)
+                .email(dto.email())
+                .roles(List.of(dto.role().name()))
+                .build();
 
         repository.save(user);
     }
