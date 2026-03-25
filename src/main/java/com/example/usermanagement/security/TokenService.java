@@ -21,11 +21,14 @@ public class TokenService {
     private String secret;
 
     public LoginResponseDTO generateToken(User user) {
+        if (user == null) {
+            throw new GenerateTokenErrorException("Usuário não pode ser nulo ao gerar token.");
+        }
         try {
             Algorithm algorithm = Algorithm.HMAC256(secret);
 
             String token = JWT.create()
-                    .withIssuer("user-management-api")
+                    .withIssuer("cardealer")
                     .withSubject(user.getLogin())
                     .withExpiresAt(generateExpirationDate())
                     .sign(algorithm);
@@ -44,17 +47,21 @@ public class TokenService {
             Algorithm algorithm = Algorithm.HMAC256(secret);
 
             return JWT.require(algorithm)
-                    .withIssuer("user-management-api")
+                    .withIssuer("cardealer")
                     .build()
                     .verify(token)
                     .getSubject();
 
         } catch (JWTVerificationException e) {
-            return "";
+            System.out.println("Erro ao validar token");
+            e.printStackTrace();
+            return null;
         }
     }
 
     private Instant generateExpirationDate() {
-        return LocalDateTime.now().plusHours(2).toInstant(ZoneOffset.of("-03:00"));
+        return LocalDateTime.now()
+                .plusHours(2)
+                .toInstant(ZoneOffset.of("-03:00"));
     }
 }

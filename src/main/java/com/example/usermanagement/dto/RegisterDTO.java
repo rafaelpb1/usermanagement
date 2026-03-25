@@ -9,6 +9,10 @@ public record RegisterDTO(
         String login,
         @NotBlank(message = "Password is required")
         String password,
+        @NotBlank(message = "Email is required")
+        String email,
         @NotNull(message = "Role is required")
-        Role role) {
+        Role role
+
+) {
 }

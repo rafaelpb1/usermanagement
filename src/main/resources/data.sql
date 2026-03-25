@@ -1,8 +1,15 @@
 CREATE TABLE users(
     id VARCHAR(255) PRIMARY KEY NOT NULL,
     login VARCHAR(50) UNIQUE NOT NULL,
-    password VARCHAR(300) NOT NULL,
-    role VARCHAR(50) NOT NULL
+    email VARCHAR(150) NOT NULL,
+    password VARCHAR(300) NOT NULL
+
+);
+
+CREATE TABLE user_roles (
+    user_id UUID NOT NULL,
+    role VARCHAR(50) NOT NULL,
+    CONSTRAINT fk_user FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
 CREATE TABLE employees(
