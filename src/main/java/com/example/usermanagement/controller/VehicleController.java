@@ -62,7 +62,7 @@ public class VehicleController {
     }
 
     @GetMapping
-    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
+    @PreAuthorize("hasRole('ADMIN')")
     @Operation(summary = "Listar veículos", description = "Retorna todos os veículos da frota (Acesso: ADMIN, USER)")
     @ApiResponses({
             @ApiResponse(responseCode = "200", description = "Lista retornada com sucesso"),
