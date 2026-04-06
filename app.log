@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2026-03-25T08:26:33.965-03:00  INFO 11492 --- [main] c.e.u.UsermanagementApplication          : Starting UsermanagementApplication using Java 17.0.12 with PID 11492 (C:\Users\rafael.souza.UNIMEDJP\IdeaProjects\usermanagement\target\classes started by rafael.souza in C:\Users\rafael.souza.UNIMEDJP\IdeaProjects\usermanagement)
 2026-03-25T08:26:33.975-03:00 DEBUG 11492 --- [main] c.e.u.UsermanagementApplication          : Running with Spring Boot v4.0.2, Spring v7.0.3
 2026-03-25T08:26:33.977-03:00  INFO 11492 --- [main] c.e.u.UsermanagementApplication          : No active profile set, falling back to 1 default profile: "default"
@@ -907,3 +908,25 @@ insert into users (email,login,password,id) values (?,?,?,?) [23502-240]
 2026-03-25T11:17:06.412-03:00 DEBUG 17744 --- [http-nio-8090-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
 2026-03-25T11:17:06.419-03:00 DEBUG 17744 --- [http-nio-8090-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [VehicleResponseDTO[vin=9BWZZZ377VT004307, licensePlate=HHH-8H08, brand=BMW, model=320i, color=Black, (truncated)...]
 2026-03-25T11:17:06.474-03:00 DEBUG 17744 --- [http-nio-8090-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 201 CREATED
+=======
+2026-04-05T09:35:09.460-03:00  WARN 2261 --- [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m21s676ms).
+2026-04-05T10:07:15.072-03:00  WARN 2261 --- [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=32m5s612ms).
+2026-04-05T11:19:04.199-03:00  WARN 2261 --- [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h11m49s128ms).
+2026-04-05T11:52:07.162-03:00  WARN 2261 --- [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=33m2s961ms).
+2026-04-05T12:13:46.423-03:00  WARN 2261 --- [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=21m39s263ms).
+2026-04-05T12:31:49.498-03:00  WARN 2261 --- [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=18m3s74ms).
+2026-04-05T12:34:47.364-03:00  WARN 2261 --- [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m57s867ms).
+2026-04-05T13:21:05.593-03:00  WARN 2261 --- [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=46m18s229ms).
+2026-04-05T13:23:39.857-03:00  WARN 2261 --- [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m34s264ms).
+2026-04-05T13:24:42.949-03:00  WARN 2261 --- [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m3s92ms).
+2026-04-05T14:22:02.634-03:00  WARN 2261 --- [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=57m19s685ms).
+2026-04-05T14:56:48.474-03:00  WARN 2261 --- [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=34m45s834ms).
+2026-04-05T15:13:24.981-03:00  WARN 2261 --- [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m36s513ms).
+2026-04-05T15:32:52.224-03:00  WARN 2261 --- [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=19m27s243ms).
+2026-04-05T15:45:00.052-03:00  WARN 2261 --- [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=12m7s828ms).
+2026-04-05T15:46:06.723-03:00  INFO 2261 --- [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-05T15:46:08.746-03:00  INFO 2261 --- [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-04-05T15:46:08.760-03:00  INFO 2261 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-05T15:46:08.765-03:00  INFO 2261 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-04-05T15:46:08.769-03:00  INFO 2261 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+>>>>>>> 79715c4 (Limpando imports)

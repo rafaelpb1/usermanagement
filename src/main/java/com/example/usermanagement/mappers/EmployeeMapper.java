@@ -1,11 +1,12 @@
 package com.example.usermanagement.mappers;
 
-import com.example.usermanagement.dto.EmployeeRequestDTO;
-import com.example.usermanagement.dto.EmployeeResponseDTO;
-import com.example.usermanagement.model.employee.Employee;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
+
+import com.example.usermanagement.dto.EmployeeRequestDTO;
+import com.example.usermanagement.dto.EmployeeResponseDTO;
+import com.example.usermanagement.model.employee.Employee;
 
 @Mapper(componentModel = "spring")
 public interface EmployeeMapper {

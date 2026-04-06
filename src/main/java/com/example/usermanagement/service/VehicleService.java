@@ -1,5 +1,9 @@
 package com.example.usermanagement.service;
 
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
 import com.example.usermanagement.dto.VehicleRequestDTO;
 import com.example.usermanagement.dto.VehicleResponseDTO;
 import com.example.usermanagement.dto.VehicleUpdateDTO;
@@ -8,14 +12,9 @@ import com.example.usermanagement.exception.VehicleNotFoundException;
 import com.example.usermanagement.mappers.VehicleMapper;
 import com.example.usermanagement.model.vehicle.Vehicle;
 import com.example.usermanagement.repository.VehicleRepository;
+
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
-
-import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor

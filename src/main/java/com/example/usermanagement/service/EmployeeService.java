@@ -1,5 +1,9 @@
 package com.example.usermanagement.service;
 
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
 import com.example.usermanagement.dto.EmployeeRequestDTO;
 import com.example.usermanagement.dto.EmployeeResponseDTO;
 import com.example.usermanagement.exception.EmployeeAlreadyRegisteredException;
@@ -7,14 +11,9 @@ import com.example.usermanagement.exception.EmployeeNotFoundException;
 import com.example.usermanagement.mappers.EmployeeMapper;
 import com.example.usermanagement.model.employee.Employee;
 import com.example.usermanagement.repository.EmployeeRepository;
+
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
-
-import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor

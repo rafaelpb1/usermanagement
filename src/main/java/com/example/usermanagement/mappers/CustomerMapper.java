@@ -1,12 +1,13 @@
 package com.example.usermanagement.mappers;
 
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.MappingTarget;
+
 import com.example.usermanagement.dto.CustomerRequestDTO;
 import com.example.usermanagement.dto.CustomerResponseDTO;
 import com.example.usermanagement.dto.CustomerUpdateDTO;
 import com.example.usermanagement.model.customers.Customer;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.MappingTarget;
 
 @Mapper(componentModel = "spring")
 public interface CustomerMapper {
