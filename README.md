@@ -2,14 +2,23 @@
 
 Sistema de gestão para operação de concessionária, com backend em Spring Boot (quase completo) e frontend React em fase inicial.
 
-## Status do Projeto
+[![Java](https://img.shields.io/badge/Java-17-ED8B00?logo=openjdk&logoColor=white)](https://www.java.com/)
+[![Spring Boot](https://img.shields.io/badge/Spring_Boot-4-6DB33F?logo=springboot&logoColor=white)](https://spring.io/projects/spring-boot)
+[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-Frontend-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
+[![H2](https://img.shields.io/badge/H2-Database-003B57?logoColor=white)](https://www.h2database.com/)
+[![JWT](https://img.shields.io/badge/Auth-JWT-000000?logo=jsonwebtokens&logoColor=white)](https://jwt.io/)
+[![Swagger](https://img.shields.io/badge/OpenAPI-Swagger-85EA2D?logo=swagger&logoColor=black)](https://swagger.io/)
+
+## Projeto em Números e Status 🚧
 
 Este projeto está em desenvolvimento ativo.
 
 - Backend: majoritariamente implementado (autenticação, autorização, CRUDs e registro de vendas).
 - Frontend: iniciado, com integração de login em andamento.
 
-## Objetivo do Produto
+## Objetivo do Produto 🎯
 
 Centralizar a operação de cadastro e consulta de:
 
@@ -37,9 +46,9 @@ Com controle de acesso por perfil (`ADMIN` e `USER`) e documentação interativa
 - Interface Swagger para exploração da API.
 - Banco H2 em memória para desenvolvimento local.
 
-## Arquitetura e Stack
+## Arquitetura e Stack 🧱
 
-### Backend
+### Backend ⚙️
 
 - Java 17
 - Spring Boot 4
@@ -52,14 +61,14 @@ Com controle de acesso por perfil (`ADMIN` e `USER`) e documentação interativa
 - SpringDoc OpenAPI (Swagger UI)
 - Lombok
 
-### Frontend
+### Frontend 🎨
 
 - React 19 + TypeScript
 - Vite
 - Axios
 - React Router (base já instalada)
 
-## Estrutura do Repositório
+## Estrutura do Repositório 🗂️
 
 ```text
 .
@@ -80,15 +89,15 @@ Com controle de acesso por perfil (`ADMIN` e `USER`) e documentação interativa
 └── pom.xml
 ```
 
-## Como Executar Localmente
+## Como Executar Localmente ▶️
 
-## Pré-requisitos
+## Pré-requisitos ✅
 
 - Java 17+
 - Maven (ou usar `./mvnw`)
 - Node.js 18+ e npm
 
-## 1. Subir Backend
+## 1. Subir Backend 🖥️
 
 ```bash
 ./mvnw spring-boot:run
@@ -96,7 +105,7 @@ Com controle de acesso por perfil (`ADMIN` e `USER`) e documentação interativa
 
 Backend disponível em: `http://localhost:8090`
 
-## 2. Subir Frontend
+## 2. Subir Frontend 🌐
 
 ```bash
 cd frontend
@@ -106,7 +115,7 @@ npm run dev
 
 Frontend disponível em: `http://localhost:5173`
 
-## Configurações Importantes
+## Configurações Importantes ⚠️
 
 Arquivo: `src/main/resources/application.yml`
 
@@ -122,7 +131,7 @@ Exemplo:
 export JWT_SECRET="um-segredo-forte-aqui"
 ```
 
-## Acessos de Desenvolvimento
+## Acessos de Desenvolvimento 🔎
 
 - Swagger UI: `http://localhost:8090/swagger-ui/index.html`
 - OpenAPI JSON: `http://localhost:8090/v3/api-docs`
@@ -134,7 +143,7 @@ Credenciais H2 (conforme `application.yml`):
 - User: `sa`
 - Password: `password`
 
-## Fluxo de Autenticação
+## Fluxo de Autenticação 🔐
 
 1. Registrar usuário em `POST /auth/register`.
 2. Fazer login em `POST /auth/login`.
@@ -146,7 +155,7 @@ Authorization: Bearer <seu_token>
 
 Validade do token: aproximadamente 2 horas.
 
-## Matriz de Permissões
+## Matriz de Permissões 🛡️
 
 | Recurso | Ação | ADMIN | USER |
 | --- | --- | --- | --- |
@@ -160,7 +169,7 @@ Validade do token: aproximadamente 2 horas.
 | Sales | GET | Sim | Sim |
 | Sales | POST/DELETE | Sim | Não |
 
-## Endpoints da API
+## Endpoints da API 📡
 
 ## Autenticação
 
@@ -194,9 +203,9 @@ Validade do token: aproximadamente 2 horas.
 - `GET /sales`
 - `DELETE /sales/{id}`
 
-## Exemplos de Payload
+## Exemplos de Payload 📦
 
-## Register
+## Register ✍️
 
 ```json
 {
@@ -206,7 +215,7 @@ Validade do token: aproximadamente 2 horas.
 }
 ```
 
-## Login
+## Login 🔑
 
 ```json
 {
@@ -224,7 +233,7 @@ Resposta:
 }
 ```
 
-## Cadastro de Veículo
+## Cadastro de Veículo 🚗
 
 ```json
 {
@@ -239,7 +248,7 @@ Resposta:
 }
 ```
 
-## Registro de Venda
+## Registro de Venda 💰
 
 ```json
 {
@@ -251,7 +260,7 @@ Resposta:
 }
 ```
 
-## Padrão de Erros
+## Padrão de Erros ❗
 
 A API retorna estrutura padronizada:
 
@@ -268,7 +277,7 @@ A API retorna estrutura padronizada:
 }
 ```
 
-## Frontend (Estado Atual)
+## Frontend (Estado Atual) 🧪
 
 Implementações iniciadas:
 
@@ -283,7 +292,7 @@ Em evolução:
 - Dashboard operacional com indicadores.
 - Tratamento de erros e feedback visual de autenticação.
 
-## Roadmap
+## Roadmap 🛣️
 
 - Finalizar fluxo completo do frontend.
 - Adicionar testes unitários e de integração (backend e frontend).
@@ -291,7 +300,7 @@ Em evolução:
 - Melhorar observabilidade e logs.
 - Preparar deploy (API + Web) com pipeline CI/CD.
 
-## Qualidade e Boas Práticas
+## Qualidade e Boas Práticas 🧠
 
 - Documentação OpenAPI com Swagger.
 - Separação por camadas (`controller`, `service`, `repository`).
@@ -300,7 +309,7 @@ Em evolução:
 - Segurança stateless com JWT.
 - Tratamento centralizado de exceções.
 
-## Contribuição
+## Contribuição 🤝
 
 Como o projeto está em evolução, contribuições e sugestões são bem-vindas.
 
@@ -310,6 +319,6 @@ Fluxo recomendado:
 2. Implementar alteração com commits pequenos e claros.
 3. Abrir PR com descrição funcional e técnica.
 
-## Licença
+## Licença 📄
 
 Defina aqui a licença do projeto (ex.: MIT) antes de publicar em produção.
