@@ -1,4 +1,4 @@
-# User Management & Vehicle Sales API
+# Vehicle Sales API
 
 Sistema de gestão para operação de concessionária, com backend em Spring Boot (quase completo) e frontend React em fase inicial.
 
