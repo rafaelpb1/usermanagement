@@ -1,6 +1,6 @@
-package com.example.usermanagement.repository;
+package com.example.vehiclesale.repository;
 
-import com.example.usermanagement.model.sale.Sale;
+import com.example.vehiclesale.model.sale.Sale;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

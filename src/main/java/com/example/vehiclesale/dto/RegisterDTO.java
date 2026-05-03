@@ -1,6 +1,6 @@
-package com.example.usermanagement.dto;
+package com.example.vehiclesale.dto;
 
-import com.example.usermanagement.model.users.Role;
+import com.example.vehiclesale.model.users.Role;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 

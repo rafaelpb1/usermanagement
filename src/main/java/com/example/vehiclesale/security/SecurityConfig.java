@@ -1,4 +1,4 @@
-package com.example.usermanagement.security;
+package com.example.vehiclesale.security;
 
 import java.util.List;
 

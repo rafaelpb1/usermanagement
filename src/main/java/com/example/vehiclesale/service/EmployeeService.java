@@ -1,16 +1,16 @@
-package com.example.usermanagement.service;
+package com.example.vehiclesale.service;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.example.usermanagement.dto.EmployeeRequestDTO;
-import com.example.usermanagement.dto.EmployeeResponseDTO;
-import com.example.usermanagement.exception.EmployeeAlreadyRegisteredException;
-import com.example.usermanagement.exception.EmployeeNotFoundException;
-import com.example.usermanagement.mappers.EmployeeMapper;
-import com.example.usermanagement.model.employee.Employee;
-import com.example.usermanagement.repository.EmployeeRepository;
+import com.example.vehiclesale.dto.EmployeeRequestDTO;
+import com.example.vehiclesale.dto.EmployeeResponseDTO;
+import com.example.vehiclesale.exception.EmployeeAlreadyRegisteredException;
+import com.example.vehiclesale.exception.EmployeeNotFoundException;
+import com.example.vehiclesale.mappers.EmployeeMapper;
+import com.example.vehiclesale.model.employee.Employee;
+import com.example.vehiclesale.repository.EmployeeRepository;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;

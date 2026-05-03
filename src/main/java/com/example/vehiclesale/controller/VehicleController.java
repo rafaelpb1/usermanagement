@@ -1,4 +1,4 @@
-package com.example.usermanagement.controller;
+package com.example.vehiclesale.controller;
 
 import java.util.List;
 
@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.usermanagement.dto.VehicleRequestDTO;
-import com.example.usermanagement.dto.VehicleResponseDTO;
-import com.example.usermanagement.dto.VehicleUpdateDTO;
-import com.example.usermanagement.service.VehicleService;
+import com.example.vehiclesale.dto.VehicleRequestDTO;
+import com.example.vehiclesale.dto.VehicleResponseDTO;
+import com.example.vehiclesale.dto.VehicleUpdateDTO;
+import com.example.vehiclesale.service.VehicleService;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;

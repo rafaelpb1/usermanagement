@@ -1,4 +1,4 @@
-package com.example.usermanagement.exception;
+package com.example.vehiclesale.exception;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

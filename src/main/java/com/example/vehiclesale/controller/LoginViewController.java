@@ -1,6 +1,6 @@
-package com.example.usermanagement.controller;
+package com.example.vehiclesale.controller;
 
-import com.example.usermanagement.security.CustomAuthentication;
+import com.example.vehiclesale.security.CustomAuthentication;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

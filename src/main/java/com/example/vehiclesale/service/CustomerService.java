@@ -1,13 +1,13 @@
-package com.example.usermanagement.service;
+package com.example.vehiclesale.service;
 
-import com.example.usermanagement.dto.CustomerRequestDTO;
-import com.example.usermanagement.dto.CustomerResponseDTO;
-import com.example.usermanagement.dto.CustomerUpdateDTO;
-import com.example.usermanagement.exception.CustomerAlreadyRegisteredException;
-import com.example.usermanagement.exception.CustomerNotFoundException;
-import com.example.usermanagement.mappers.CustomerMapper;
-import com.example.usermanagement.model.customers.Customer;
-import com.example.usermanagement.repository.CustomerRepository;
+import com.example.vehiclesale.dto.CustomerRequestDTO;
+import com.example.vehiclesale.dto.CustomerResponseDTO;
+import com.example.vehiclesale.dto.CustomerUpdateDTO;
+import com.example.vehiclesale.exception.CustomerAlreadyRegisteredException;
+import com.example.vehiclesale.exception.CustomerNotFoundException;
+import com.example.vehiclesale.mappers.CustomerMapper;
+import com.example.vehiclesale.model.customers.Customer;
+import com.example.vehiclesale.repository.CustomerRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

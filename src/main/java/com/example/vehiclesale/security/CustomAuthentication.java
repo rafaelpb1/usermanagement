@@ -1,6 +1,6 @@
-package com.example.usermanagement.security;
+package com.example.vehiclesale.security;
 
-import com.example.usermanagement.model.users.User;
+import com.example.vehiclesale.model.users.User;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.jspecify.annotations.Nullable;

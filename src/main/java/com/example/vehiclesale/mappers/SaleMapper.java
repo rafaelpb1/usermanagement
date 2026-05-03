@@ -1,11 +1,11 @@
-package com.example.usermanagement.mappers;
+package com.example.vehiclesale.mappers;
 
-import com.example.usermanagement.dto.SaleRequestDTO;
-import com.example.usermanagement.dto.SaleResponseDTO;
-import com.example.usermanagement.model.customers.Customer;
-import com.example.usermanagement.model.employee.Employee;
-import com.example.usermanagement.model.sale.Sale;
-import com.example.usermanagement.model.vehicle.Vehicle;
+import com.example.vehiclesale.dto.SaleRequestDTO;
+import com.example.vehiclesale.dto.SaleResponseDTO;
+import com.example.vehiclesale.model.customers.Customer;
+import com.example.vehiclesale.model.employee.Employee;
+import com.example.vehiclesale.model.sale.Sale;
+import com.example.vehiclesale.model.vehicle.Vehicle;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

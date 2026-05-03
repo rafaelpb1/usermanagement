@@ -1,4 +1,4 @@
-package com.example.usermanagement.dto;
+package com.example.vehiclesale.dto;
 
 import java.time.LocalDateTime;
 

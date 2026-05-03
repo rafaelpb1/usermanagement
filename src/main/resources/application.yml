@@ -1,6 +1,6 @@
 spring:
   application:
-    name: cardealer
+    name: vehiclesale
 
   datasource:
     url: ${SPRING_DATASOURCE_URL}

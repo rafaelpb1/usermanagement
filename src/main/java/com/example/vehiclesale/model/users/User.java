@@ -1,4 +1,4 @@
-package com.example.usermanagement.model.users;
+package com.example.vehiclesale.model.users;
 
 import jakarta.persistence.*;
 import lombok.*;

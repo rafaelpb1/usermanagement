@@ -1,4 +1,4 @@
-package com.example.usermanagement.dto;
+package com.example.vehiclesale.dto;
 
 public record LoginResponseDTO(
         String token,

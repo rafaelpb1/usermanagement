@@ -1,9 +1,9 @@
-package com.example.usermanagement.mappers;
+package com.example.vehiclesale.mappers;
 
-import com.example.usermanagement.dto.VehicleRequestDTO;
-import com.example.usermanagement.dto.VehicleResponseDTO;
-import com.example.usermanagement.dto.VehicleUpdateDTO;
-import com.example.usermanagement.model.vehicle.Vehicle;
+import com.example.vehiclesale.dto.VehicleRequestDTO;
+import com.example.vehiclesale.dto.VehicleResponseDTO;
+import com.example.vehiclesale.dto.VehicleUpdateDTO;
+import com.example.vehiclesale.model.vehicle.Vehicle;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;

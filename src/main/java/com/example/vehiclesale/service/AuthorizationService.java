@@ -1,6 +1,6 @@
-package com.example.usermanagement.service;
+package com.example.vehiclesale.service;
 
-import com.example.usermanagement.repository.UserRepository;
+import com.example.vehiclesale.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

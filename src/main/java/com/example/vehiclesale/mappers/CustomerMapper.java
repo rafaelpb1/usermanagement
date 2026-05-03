@@ -1,13 +1,13 @@
-package com.example.usermanagement.mappers;
+package com.example.vehiclesale.mappers;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 
-import com.example.usermanagement.dto.CustomerRequestDTO;
-import com.example.usermanagement.dto.CustomerResponseDTO;
-import com.example.usermanagement.dto.CustomerUpdateDTO;
-import com.example.usermanagement.model.customers.Customer;
+import com.example.vehiclesale.dto.CustomerRequestDTO;
+import com.example.vehiclesale.dto.CustomerResponseDTO;
+import com.example.vehiclesale.dto.CustomerUpdateDTO;
+import com.example.vehiclesale.model.customers.Customer;
 
 @Mapper(componentModel = "spring")
 public interface CustomerMapper {

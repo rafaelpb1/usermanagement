@@ -4,10 +4,10 @@
 2026-05-02T19:35:39.376-03:00  WARN 36770 --- [cardealer] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
 2026-05-02T19:35:39.956-03:00 DEBUG 36770 --- [cardealer] [main] c.e.u.security.SecurityFilter            : Filter 'securityFilter' configured for use
 2026-05-02T19:35:39.956-03:00 DEBUG 36770 --- [cardealer] [main] o.s.w.s.r.ResourceUrlEncodingFilter      : Filter 'resourceUrlEncodingFilter' configured for use
-2026-05-02T19:35:39.967-03:00  WARN 36770 --- [cardealer] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authenticationController' defined in file [/Users/souza/IdeaProjects/usermanagement/target/classes/com/example/usermanagement/controller/AuthenticationController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'authenticationService' defined in file [/Users/souza/IdeaProjects/usermanagement/target/classes/com/example/usermanagement/service/AuthenticationService.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'securityConfig' defined in file [/Users/souza/IdeaProjects/usermanagement/target/classes/com/example/usermanagement/security/SecurityConfig.class]: Failed to instantiate [com.example.usermanagement.security.SecurityConfig$$SpringCGLIB$$0]: Constructor threw exception
+2026-05-02T19:35:39.967-03:00  WARN 36770 --- [cardealer] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authenticationController' defined in file [/Users/souza/IdeaProjects/usermanagement/target/classes/com/example/usermanagement/controller/AuthenticationController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'authenticationService' defined in file [/Users/souza/IdeaProjects/usermanagement/target/classes/com/example/usermanagement/service/AuthenticationService.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'securityConfig' defined in file [/Users/souza/IdeaProjects/usermanagement/target/classes/com/example/usermanagement/security/SecurityConfig.class]: Failed to instantiate [com.example.vehiclesale.security.SecurityConfig$$SpringCGLIB$$0]: Constructor threw exception
 2026-05-02T19:35:39.981-03:00 ERROR 36770 --- [cardealer] [main] o.s.boot.SpringApplication               : Application run failed
 
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authenticationController' defined in file [/Users/souza/IdeaProjects/usermanagement/target/classes/com/example/usermanagement/controller/AuthenticationController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'authenticationService' defined in file [/Users/souza/IdeaProjects/usermanagement/target/classes/com/example/usermanagement/service/AuthenticationService.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'securityConfig' defined in file [/Users/souza/IdeaProjects/usermanagement/target/classes/com/example/usermanagement/security/SecurityConfig.class]: Failed to instantiate [com.example.usermanagement.security.SecurityConfig$$SpringCGLIB$$0]: Constructor threw exception
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authenticationController' defined in file [/Users/souza/IdeaProjects/usermanagement/target/classes/com/example/usermanagement/controller/AuthenticationController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'authenticationService' defined in file [/Users/souza/IdeaProjects/usermanagement/target/classes/com/example/usermanagement/service/AuthenticationService.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'securityConfig' defined in file [/Users/souza/IdeaProjects/usermanagement/target/classes/com/example/usermanagement/security/SecurityConfig.class]: Failed to instantiate [com.example.vehiclesale.security.SecurityConfig$$SpringCGLIB$$0]: Constructor threw exception
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804) ~[spring-beans-7.0.3.jar:7.0.3]
 	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-7.0.3.jar:7.0.3]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1382) ~[spring-beans-7.0.3.jar:7.0.3]
@@ -29,8 +29,8 @@ org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.2.jar:4.0.2]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.2.jar:4.0.2]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.2.jar:4.0.2]
-	at com.example.usermanagement.UsermanagementApplication.main(UsermanagementApplication.java:40) ~[classes/:na]
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authenticationService' defined in file [/Users/souza/IdeaProjects/usermanagement/target/classes/com/example/usermanagement/service/AuthenticationService.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'securityConfig' defined in file [/Users/souza/IdeaProjects/usermanagement/target/classes/com/example/usermanagement/security/SecurityConfig.class]: Failed to instantiate [com.example.usermanagement.security.SecurityConfig$$SpringCGLIB$$0]: Constructor threw exception
+	at com.example.vehiclesale.UsermanagementApplication.main(UsermanagementApplication.java:40) ~[classes/:na]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authenticationService' defined in file [/Users/souza/IdeaProjects/usermanagement/target/classes/com/example/usermanagement/service/AuthenticationService.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'securityConfig' defined in file [/Users/souza/IdeaProjects/usermanagement/target/classes/com/example/usermanagement/security/SecurityConfig.class]: Failed to instantiate [com.example.vehiclesale.security.SecurityConfig$$SpringCGLIB$$0]: Constructor threw exception
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804) ~[spring-beans-7.0.3.jar:7.0.3]
 	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-7.0.3.jar:7.0.3]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1382) ~[spring-beans-7.0.3.jar:7.0.3]
@@ -47,7 +47,7 @@ Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Err
 	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:912) ~[spring-beans-7.0.3.jar:7.0.3]
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-7.0.3.jar:7.0.3]
 	... 21 common frames omitted
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'securityConfig' defined in file [/Users/souza/IdeaProjects/usermanagement/target/classes/com/example/usermanagement/security/SecurityConfig.class]: Failed to instantiate [com.example.usermanagement.security.SecurityConfig$$SpringCGLIB$$0]: Constructor threw exception
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'securityConfig' defined in file [/Users/souza/IdeaProjects/usermanagement/target/classes/com/example/usermanagement/security/SecurityConfig.class]: Failed to instantiate [com.example.vehiclesale.security.SecurityConfig$$SpringCGLIB$$0]: Constructor threw exception
 	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:321) ~[spring-beans-7.0.3.jar:7.0.3]
 	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:309) ~[spring-beans-7.0.3.jar:7.0.3]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1382) ~[spring-beans-7.0.3.jar:7.0.3]
@@ -73,7 +73,7 @@ Caused by: org.springframework.beans.factory.BeanCreationException: Error creati
 	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:912) ~[spring-beans-7.0.3.jar:7.0.3]
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-7.0.3.jar:7.0.3]
 	... 35 common frames omitted
-Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.example.usermanagement.security.SecurityConfig$$SpringCGLIB$$0]: Constructor threw exception
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.example.vehiclesale.security.SecurityConfig$$SpringCGLIB$$0]: Constructor threw exception
 	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:220) ~[spring-beans-7.0.3.jar:7.0.3]
 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:129) ~[spring-beans-7.0.3.jar:7.0.3]
 	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:318) ~[spring-beans-7.0.3.jar:7.0.3]
@@ -89,8 +89,8 @@ Caused by: java.lang.Error: Unresolved compilation problems:
 	Syntax error, insert ")" to complete ConstructorDeclaration
 	Syntax error, insert ";" to complete ConstructorDeclaration
 
-	at com.example.usermanagement.security.SecurityConfig.<init>(SecurityConfig.java:3) ~[classes/:na]
-	at com.example.usermanagement.security.SecurityConfig$$SpringCGLIB$$0.<init>(<generated>) ~[classes/:na]
+	at com.example.vehiclesale.security.SecurityConfig.<init>(SecurityConfig.java:3) ~[classes/:na]
+	at com.example.vehiclesale.security.SecurityConfig$$SpringCGLIB$$0.<init>(<generated>) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:na]
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
@@ -133,7 +133,7 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.2.jar:4.0.2]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.2.jar:4.0.2]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.2.jar:4.0.2]
-	at com.example.usermanagement.UsermanagementApplication.main(UsermanagementApplication.java:40) ~[classes/:na]
+	at com.example.vehiclesale.UsermanagementApplication.main(UsermanagementApplication.java:40) ~[classes/:na]
 Caused by: org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of file [/Users/souza/IdeaProjects/usermanagement/target/classes/data.sql]: CREATE TABLE users( id VARCHAR(255) PRIMARY KEY NOT NULL, login VARCHAR(50) UNIQUE NOT NULL, email VARCHAR(150) NOT NULL, password VARCHAR(300) NOT NULL )
 	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:293) ~[spring-jdbc-7.0.3.jar:7.0.3]
 	at org.springframework.jdbc.datasource.init.ResourceDatabasePopulator.populate(ResourceDatabasePopulator.java:254) ~[spring-jdbc-7.0.3.jar:7.0.3]
@@ -198,7 +198,7 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.2.jar:4.0.2]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.2.jar:4.0.2]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.2.jar:4.0.2]
-	at com.example.usermanagement.UsermanagementApplication.main(UsermanagementApplication.java:40) ~[classes/:na]
+	at com.example.vehiclesale.UsermanagementApplication.main(UsermanagementApplication.java:40) ~[classes/:na]
 Caused by: org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of file [/Users/souza/IdeaProjects/usermanagement/target/classes/data.sql]: CREATE TABLE users( id VARCHAR(255) PRIMARY KEY NOT NULL, login VARCHAR(50) UNIQUE NOT NULL, email VARCHAR(150) NOT NULL, password VARCHAR(300) NOT NULL )
 	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:293) ~[spring-jdbc-7.0.3.jar:7.0.3]
 	at org.springframework.jdbc.datasource.init.ResourceDatabasePopulator.populate(ResourceDatabasePopulator.java:254) ~[spring-jdbc-7.0.3.jar:7.0.3]
@@ -249,12 +249,12 @@ CREATE TABLE users( id VARCHAR(255) PRIMARY KEY NOT NULL, login VARCHAR(50) UNIQ
 2026-05-02T19:40:46.906-03:00 DEBUG 38765 --- [cardealer] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
 2026-05-02T19:40:46.907-03:00  INFO 38765 --- [cardealer] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
 2026-05-02T19:40:46.917-03:00 DEBUG 38765 --- [cardealer] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/auth/register", parameters={}
-2026-05-02T19:40:46.921-03:00 DEBUG 38765 --- [cardealer] [http-nio-8090-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.usermanagement.controller.AuthenticationController#register(RegisterDTO)
+2026-05-02T19:40:46.921-03:00 DEBUG 38765 --- [cardealer] [http-nio-8090-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.vehiclesale.controller.AuthenticationController#register(RegisterDTO)
 2026-05-02T19:40:46.970-03:00 DEBUG 38765 --- [cardealer] [http-nio-8090-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [RegisterDTO[login=admin, password=admin123, email=null, role=ADMIN]]
-2026-05-02T19:40:46.984-03:00 DEBUG 38765 --- [cardealer] [http-nio-8090-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.example.usermanagement.exception.GlobalExceptionHandler#handleValidation(MethodArgumentNotValidException)
+2026-05-02T19:40:46.984-03:00 DEBUG 38765 --- [cardealer] [http-nio-8090-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.example.vehiclesale.exception.GlobalExceptionHandler#handleValidation(MethodArgumentNotValidException)
 2026-05-02T19:40:46.998-03:00 DEBUG 38765 --- [cardealer] [http-nio-8090-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
 2026-05-02T19:40:46.999-03:00 DEBUG 38765 --- [cardealer] [http-nio-8090-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [ErrorResponse[status=400, message=Validation Error, errors=[ErrorField[field=email, message=Email is (truncated)...]
-2026-05-02T19:40:47.012-03:00 DEBUG 38765 --- [cardealer] [http-nio-8090-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity com.example.usermanagement.controller.AuthenticationController.register(com.example.usermanagement.dto.RegisterDTO): [Field error in object 'registerDTO' on field 'email': rejected value [null]; codes [NotBlank.registerDTO.email,NotBlank.email,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [registerDTO.email,email]; arguments []; default message [email]]; default message [Email is required]] ]
+2026-05-02T19:40:47.012-03:00 DEBUG 38765 --- [cardealer] [http-nio-8090-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity com.example.vehiclesale.controller.AuthenticationController.register(com.example.vehiclesale.dto.RegisterDTO): [Field error in object 'registerDTO' on field 'email': rejected value [null]; codes [NotBlank.registerDTO.email,NotBlank.email,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [registerDTO.email,email]; arguments []; default message [email]]; default message [Email is required]] ]
 2026-05-02T19:40:47.012-03:00 DEBUG 38765 --- [cardealer] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
 2026-05-02T19:43:06.290-03:00  INFO 40894 --- [cardealer] [main] c.e.u.UsermanagementApplication          : Starting UsermanagementApplication using Java 17.0.12 with PID 40894 (/Users/souza/IdeaProjects/usermanagement/target/classes started by souza in /Users/souza/IdeaProjects/usermanagement)
 2026-05-02T19:43:06.291-03:00 DEBUG 40894 --- [cardealer] [main] c.e.u.UsermanagementApplication          : Running with Spring Boot v4.0.2, Spring v7.0.3
@@ -276,12 +276,12 @@ CREATE TABLE users( id VARCHAR(255) PRIMARY KEY NOT NULL, login VARCHAR(50) UNIQ
 2026-05-02T19:43:25.161-03:00 DEBUG 40894 --- [cardealer] [http-nio-8090-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
 2026-05-02T19:43:25.161-03:00  INFO 40894 --- [cardealer] [http-nio-8090-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
 2026-05-02T19:43:25.170-03:00 DEBUG 40894 --- [cardealer] [http-nio-8090-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/auth/register", parameters={}
-2026-05-02T19:43:25.174-03:00 DEBUG 40894 --- [cardealer] [http-nio-8090-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.usermanagement.controller.AuthenticationController#register(RegisterDTO)
+2026-05-02T19:43:25.174-03:00 DEBUG 40894 --- [cardealer] [http-nio-8090-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.vehiclesale.controller.AuthenticationController#register(RegisterDTO)
 2026-05-02T19:43:25.218-03:00 DEBUG 40894 --- [cardealer] [http-nio-8090-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [RegisterDTO[login=admin, password=admin123, email=null, role=ADMIN]]
-2026-05-02T19:43:25.232-03:00 DEBUG 40894 --- [cardealer] [http-nio-8090-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.example.usermanagement.exception.GlobalExceptionHandler#handleValidation(MethodArgumentNotValidException)
+2026-05-02T19:43:25.232-03:00 DEBUG 40894 --- [cardealer] [http-nio-8090-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.example.vehiclesale.exception.GlobalExceptionHandler#handleValidation(MethodArgumentNotValidException)
 2026-05-02T19:43:25.247-03:00 DEBUG 40894 --- [cardealer] [http-nio-8090-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
 2026-05-02T19:43:25.248-03:00 DEBUG 40894 --- [cardealer] [http-nio-8090-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [ErrorResponse[status=400, message=Validation Error, errors=[ErrorField[field=email, message=Email is (truncated)...]
-2026-05-02T19:43:25.260-03:00 DEBUG 40894 --- [cardealer] [http-nio-8090-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity com.example.usermanagement.controller.AuthenticationController.register(com.example.usermanagement.dto.RegisterDTO): [Field error in object 'registerDTO' on field 'email': rejected value [null]; codes [NotBlank.registerDTO.email,NotBlank.email,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [registerDTO.email,email]; arguments []; default message [email]]; default message [Email is required]] ]
+2026-05-02T19:43:25.260-03:00 DEBUG 40894 --- [cardealer] [http-nio-8090-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity com.example.vehiclesale.controller.AuthenticationController.register(com.example.vehiclesale.dto.RegisterDTO): [Field error in object 'registerDTO' on field 'email': rejected value [null]; codes [NotBlank.registerDTO.email,NotBlank.email,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [registerDTO.email,email]; arguments []; default message [email]]; default message [Email is required]] ]
 2026-05-02T19:43:25.261-03:00 DEBUG 40894 --- [cardealer] [http-nio-8090-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
 2026-05-02T19:44:49.691-03:00  INFO 41798 --- [cardealer] [main] c.e.u.UsermanagementApplication          : Starting UsermanagementApplication using Java 25.0.2 with PID 41798 (/Users/souza/IdeaProjects/usermanagement/target/classes started by souza in /Users/souza/IdeaProjects/usermanagement)
 2026-05-02T19:44:49.692-03:00 DEBUG 41798 --- [cardealer] [main] c.e.u.UsermanagementApplication          : Running with Spring Boot v4.0.2, Spring v7.0.3
@@ -403,7 +403,7 @@ org.hibernate.exception.AuthException: Unable to obtain isolated JDBC connection
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.2.jar:4.0.2]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.2.jar:4.0.2]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.2.jar:4.0.2]
-	at com.example.usermanagement.UsermanagementApplication.main(UsermanagementApplication.java:40) ~[classes/:na]
+	at com.example.vehiclesale.UsermanagementApplication.main(UsermanagementApplication.java:40) ~[classes/:na]
 Caused by: org.postgresql.util.PSQLException: FATAL: password authentication failed for user "usermanagement"
 	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:778) ~[postgresql-42.7.9.jar:42.7.9]
 	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:234) ~[postgresql-42.7.9.jar:42.7.9]
@@ -428,7 +428,7 @@ Caused by: org.postgresql.util.PSQLException: FATAL: password authentication fai
 2026-05-02T19:44:52.837-03:00  WARN 41798 --- [cardealer] [main] org.hibernate.orm.jdbc.error             : HHH000247: ErrorCode: 0, SQLState: 28P01
 2026-05-02T19:44:52.838-03:00  WARN 41798 --- [cardealer] [main] org.hibernate.orm.jdbc.error             : FATAL: password authentication failed for user "usermanagement"
 2026-05-02T19:44:52.843-03:00 ERROR 41798 --- [cardealer] [main] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Unable to build Hibernate SessionFactory  [persistence unit: default] ; nested exception is org.hibernate.exception.AuthException: Unable to open JDBC Connection for DDL execution [FATAL: password authentication failed for user "usermanagement"] [n/a]
-2026-05-02T19:44:52.844-03:00 ERROR 41798 --- [cardealer] [main] t.s.DeferredServletContainerInitializers : Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'securityFilter' defined in file [/Users/souza/IdeaProjects/usermanagement/target/classes/com/example/usermanagement/security/SecurityFilter.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'userRepository' defined in com.example.usermanagement.repository.UserRepository defined in @EnableJpaRepositories declared on DataJpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+2026-05-02T19:44:52.844-03:00 ERROR 41798 --- [cardealer] [main] t.s.DeferredServletContainerInitializers : Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'securityFilter' defined in file [/Users/souza/IdeaProjects/usermanagement/target/classes/com/example/usermanagement/security/SecurityFilter.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'userRepository' defined in com.example.vehiclesale.repository.UserRepository defined in @EnableJpaRepositories declared on DataJpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
 2026-05-02T19:44:52.874-03:00  WARN 41798 --- [cardealer] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
 2026-05-02T19:44:52.885-03:00 ERROR 41798 --- [cardealer] [main] o.s.boot.SpringApplication               : Application run failed
 
@@ -441,7 +441,7 @@ org.springframework.context.ApplicationContextException: Unable to start web ser
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.2.jar:4.0.2]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.2.jar:4.0.2]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.2.jar:4.0.2]
-	at com.example.usermanagement.UsermanagementApplication.main(UsermanagementApplication.java:40) ~[classes/:na]
+	at com.example.vehiclesale.UsermanagementApplication.main(UsermanagementApplication.java:40) ~[classes/:na]
 Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
 	at org.springframework.boot.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:150) ~[spring-boot-tomcat-4.0.2.jar:4.0.2]
 	at org.springframework.boot.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:110) ~[spring-boot-tomcat-4.0.2.jar:4.0.2]
@@ -450,7 +450,7 @@ Caused by: org.springframework.boot.web.server.WebServerException: Unable to sta
 	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:190) ~[spring-boot-web-server-4.0.2.jar:4.0.2]
 	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:164) ~[spring-boot-web-server-4.0.2.jar:4.0.2]
 	... 8 common frames omitted
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'securityFilter' defined in file [/Users/souza/IdeaProjects/usermanagement/target/classes/com/example/usermanagement/security/SecurityFilter.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'userRepository' defined in com.example.usermanagement.repository.UserRepository defined in @EnableJpaRepositories declared on DataJpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'securityFilter' defined in file [/Users/souza/IdeaProjects/usermanagement/target/classes/com/example/usermanagement/security/SecurityFilter.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'userRepository' defined in com.example.vehiclesale.repository.UserRepository defined in @EnableJpaRepositories declared on DataJpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804) ~[spring-beans-7.0.3.jar:7.0.3]
 	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-7.0.3.jar:7.0.3]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1382) ~[spring-beans-7.0.3.jar:7.0.3]
@@ -493,7 +493,7 @@ Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Err
 	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:435) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
 	at org.springframework.boot.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:131) ~[spring-boot-tomcat-4.0.2.jar:4.0.2]
 	... 13 common frames omitted
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRepository' defined in com.example.usermanagement.repository.UserRepository defined in @EnableJpaRepositories declared on DataJpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRepository' defined in com.example.vehiclesale.repository.UserRepository defined in @EnableJpaRepositories declared on DataJpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
 	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377) ~[spring-beans-7.0.3.jar:7.0.3]
 	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135) ~[spring-beans-7.0.3.jar:7.0.3]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1712) ~[spring-beans-7.0.3.jar:7.0.3]
@@ -611,21 +611,21 @@ Caused by: org.postgresql.util.PSQLException: FATAL: password authentication fai
 2026-05-02T19:48:08.156-03:00 DEBUG 43613 --- [cardealer] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
 2026-05-02T19:48:08.156-03:00  INFO 43613 --- [cardealer] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
 2026-05-02T19:48:08.163-03:00 DEBUG 43613 --- [cardealer] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/auth/register", parameters={}
-2026-05-02T19:48:08.166-03:00 DEBUG 43613 --- [cardealer] [http-nio-8090-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.usermanagement.controller.AuthenticationController#register(RegisterDTO)
+2026-05-02T19:48:08.166-03:00 DEBUG 43613 --- [cardealer] [http-nio-8090-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.vehiclesale.controller.AuthenticationController#register(RegisterDTO)
 2026-05-02T19:48:08.206-03:00 DEBUG 43613 --- [cardealer] [http-nio-8090-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [RegisterDTO[login=admin, password=admin123, email=null, role=ADMIN]]
-2026-05-02T19:48:08.220-03:00 DEBUG 43613 --- [cardealer] [http-nio-8090-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.example.usermanagement.exception.GlobalExceptionHandler#handleValidation(MethodArgumentNotValidException)
+2026-05-02T19:48:08.220-03:00 DEBUG 43613 --- [cardealer] [http-nio-8090-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.example.vehiclesale.exception.GlobalExceptionHandler#handleValidation(MethodArgumentNotValidException)
 2026-05-02T19:48:08.235-03:00 DEBUG 43613 --- [cardealer] [http-nio-8090-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
 2026-05-02T19:48:08.236-03:00 DEBUG 43613 --- [cardealer] [http-nio-8090-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [ErrorResponse[status=400, message=Validation Error, errors=[ErrorField[field=email, message=Email is (truncated)...]
-2026-05-02T19:48:08.248-03:00 DEBUG 43613 --- [cardealer] [http-nio-8090-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity com.example.usermanagement.controller.AuthenticationController.register(com.example.usermanagement.dto.RegisterDTO): [Field error in object 'registerDTO' on field 'email': rejected value [null]; codes [NotBlank.registerDTO.email,NotBlank.email,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [registerDTO.email,email]; arguments []; default message [email]]; default message [Email is required]] ]
+2026-05-02T19:48:08.248-03:00 DEBUG 43613 --- [cardealer] [http-nio-8090-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity com.example.vehiclesale.controller.AuthenticationController.register(com.example.vehiclesale.dto.RegisterDTO): [Field error in object 'registerDTO' on field 'email': rejected value [null]; codes [NotBlank.registerDTO.email,NotBlank.email,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [registerDTO.email,email]; arguments []; default message [email]]; default message [Email is required]] ]
 2026-05-02T19:48:08.249-03:00 DEBUG 43613 --- [cardealer] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
 2026-05-02T21:17:23.176-03:00 DEBUG 43613 --- [cardealer] [http-nio-8090-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/auth/register", parameters={}
-2026-05-02T21:17:23.179-03:00 DEBUG 43613 --- [cardealer] [http-nio-8090-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.usermanagement.controller.AuthenticationController#register(RegisterDTO)
+2026-05-02T21:17:23.179-03:00 DEBUG 43613 --- [cardealer] [http-nio-8090-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.vehiclesale.controller.AuthenticationController#register(RegisterDTO)
 2026-05-02T21:17:23.185-03:00 DEBUG 43613 --- [cardealer] [http-nio-8090-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [RegisterDTO[login=admin, password=admin123, email=admin@admin.com, role=ADMIN]]
 2026-05-02T21:17:23.499-03:00 DEBUG 43613 --- [cardealer] [http-nio-8090-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
 2026-05-02T21:17:23.499-03:00 DEBUG 43613 --- [cardealer] [http-nio-8090-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
 2026-05-02T21:17:23.500-03:00 DEBUG 43613 --- [cardealer] [http-nio-8090-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
 2026-05-02T21:17:26.597-03:00 DEBUG 43613 --- [cardealer] [http-nio-8090-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/auth/login", parameters={}
-2026-05-02T21:17:26.598-03:00 DEBUG 43613 --- [cardealer] [http-nio-8090-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.usermanagement.controller.AuthenticationController#login(LoginRequestDTO)
+2026-05-02T21:17:26.598-03:00 DEBUG 43613 --- [cardealer] [http-nio-8090-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.vehiclesale.controller.AuthenticationController#login(LoginRequestDTO)
 2026-05-02T21:17:26.604-03:00 DEBUG 43613 --- [cardealer] [http-nio-8090-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDTO[login=admin, email=admin@admin.com, password=admin123]]
 2026-05-02T21:17:26.703-03:00 DEBUG 43613 --- [cardealer] [http-nio-8090-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
 2026-05-02T21:17:26.704-03:00 DEBUG 43613 --- [cardealer] [http-nio-8090-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginResponseDTO[token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjYXJkZWFsZXIiLCJzdWIiOiJhZG1p (truncated)...]
@@ -655,14 +655,276 @@ Caused by: org.postgresql.util.PSQLException: FATAL: password authentication fai
 2026-05-02T21:21:11.905-03:00 DEBUG 62689 --- [cardealer] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
 2026-05-02T21:21:11.905-03:00  INFO 62689 --- [cardealer] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
 2026-05-02T21:21:11.914-03:00 DEBUG 62689 --- [cardealer] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/auth/register", parameters={}
-2026-05-02T21:21:11.921-03:00 DEBUG 62689 --- [cardealer] [http-nio-8090-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.usermanagement.controller.AuthenticationController#register(RegisterDTO)
+2026-05-02T21:21:11.921-03:00 DEBUG 62689 --- [cardealer] [http-nio-8090-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.vehiclesale.controller.AuthenticationController#register(RegisterDTO)
 2026-05-02T21:21:11.964-03:00 DEBUG 62689 --- [cardealer] [http-nio-8090-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [RegisterDTO[login=admin, password=admin123, email=admin@admin.com, role=ADMIN]]
 2026-05-02T21:21:12.228-03:00 DEBUG 62689 --- [cardealer] [http-nio-8090-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
 2026-05-02T21:21:12.229-03:00 DEBUG 62689 --- [cardealer] [http-nio-8090-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
 2026-05-02T21:21:12.230-03:00 DEBUG 62689 --- [cardealer] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
 2026-05-02T21:21:14.883-03:00 DEBUG 62689 --- [cardealer] [http-nio-8090-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/auth/login", parameters={}
-2026-05-02T21:21:14.884-03:00 DEBUG 62689 --- [cardealer] [http-nio-8090-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.usermanagement.controller.AuthenticationController#login(LoginRequestDTO)
+2026-05-02T21:21:14.884-03:00 DEBUG 62689 --- [cardealer] [http-nio-8090-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.vehiclesale.controller.AuthenticationController#login(LoginRequestDTO)
 2026-05-02T21:21:14.891-03:00 DEBUG 62689 --- [cardealer] [http-nio-8090-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDTO[login=admin, email=admin@admin.com, password=admin123]]
 2026-05-02T21:21:15.000-03:00 DEBUG 62689 --- [cardealer] [http-nio-8090-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
 2026-05-02T21:21:15.001-03:00 DEBUG 62689 --- [cardealer] [http-nio-8090-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginResponseDTO[token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjYXJkZWFsZXIiLCJzdWIiOiJhZG1p (truncated)...]
 2026-05-02T21:21:15.012-03:00 DEBUG 62689 --- [cardealer] [http-nio-8090-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-05-02T22:31:12.303-03:00  INFO 81330 --- [cardealer] [main] c.e.v.UsermanagementApplication          : Starting UsermanagementApplication using Java 25.0.2 with PID 81330 (/Users/souza/IdeaProjects/vehiclesale/target/classes started by souza in /Users/souza/IdeaProjects/vehiclesale)
+2026-05-02T22:31:12.304-03:00 DEBUG 81330 --- [cardealer] [main] c.e.v.UsermanagementApplication          : Running with Spring Boot v4.0.2, Spring v7.0.3
+2026-05-02T22:31:12.304-03:00  INFO 81330 --- [cardealer] [main] c.e.v.UsermanagementApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-05-02T22:31:13.212-03:00  WARN 81330 --- [cardealer] [main] org.hibernate.orm.jdbc                   : HHH100046: Could not obtain connection to query JDBC database metadata
+
+java.lang.RuntimeException: Driver org.postgresql.Driver claims to not accept jdbcUrl, ${SPRING_DATASOURCE_URL}
+	at com.zaxxer.hikari.util.DriverDataSource.<init>(DriverDataSource.java:116) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.initializeDataSource(PoolBase.java:336) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.<init>(PoolBase.java:121) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:90) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-7.0.2.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DataSourceConnectionProvider.getConnection(DataSourceConnectionProvider.java:137) ~[hibernate-core-7.2.1.Final.jar:7.2.1.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:508) ~[hibernate-core-7.2.1.Final.jar:7.2.1.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:48) ~[hibernate-core-7.2.1.Final.jar:7.2.1.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:366) ~[hibernate-core-7.2.1.Final.jar:7.2.1.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironment(JdbcEnvironmentInitiator.java:143) ~[hibernate-core-7.2.1.Final.jar:7.2.1.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:120) ~[hibernate-core-7.2.1.Final.jar:7.2.1.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:80) ~[hibernate-core-7.2.1.Final.jar:7.2.1.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:133) ~[hibernate-core-7.2.1.Final.jar:7.2.1.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:260) ~[hibernate-core-7.2.1.Final.jar:7.2.1.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:235) ~[hibernate-core-7.2.1.Final.jar:7.2.1.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:212) ~[hibernate-core-7.2.1.Final.jar:7.2.1.Final]
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:44) ~[hibernate-core-7.2.1.Final.jar:7.2.1.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:251) ~[hibernate-core-7.2.1.Final.jar:7.2.1.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:203) ~[hibernate-core-7.2.1.Final.jar:7.2.1.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:170) ~[hibernate-core-7.2.1.Final.jar:7.2.1.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1392) ~[hibernate-core-7.2.1.Final.jar:7.2.1.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.populateSessionFactoryBuilder(EntityManagerFactoryBuilderImpl.java:1472) ~[hibernate-core-7.2.1.Final.jar:7.2.1.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1454) ~[hibernate-core-7.2.1.Final.jar:7.2.1.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-7.0.3.jar:7.0.3]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:433) ~[spring-orm-7.0.3.jar:7.0.3]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:416) ~[spring-orm-7.0.3.jar:7.0.3]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-7.0.3.jar:7.0.3]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:409) ~[spring-orm-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1864) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1813) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:691) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:513) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1362) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1194) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:356) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1712) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1461) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:229) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1762) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:912) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1382) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1221) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:231) ~[spring-boot-4.0.2.jar:4.0.2]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:185) ~[spring-boot-4.0.2.jar:4.0.2]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:180) ~[spring-boot-4.0.2.jar:4.0.2]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:165) ~[spring-boot-4.0.2.jar:4.0.2]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:97) ~[spring-boot-4.0.2.jar:4.0.2]
+	at org.springframework.boot.web.context.servlet.WebApplicationContextInitializer.initialize(WebApplicationContextInitializer.java:53) ~[spring-boot-4.0.2.jar:4.0.2]
+	at org.springframework.boot.tomcat.servlet.DeferredServletContainerInitializers.onStartup(DeferredServletContainerInitializers.java:55) ~[spring-boot-tomcat-4.0.2.jar:4.0.2]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4416) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1162) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1158) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:81) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:149) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:714) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:780) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1162) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1158) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:81) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:149) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:714) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:201) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:410) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:864) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:435) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.springframework.boot.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:131) ~[spring-boot-tomcat-4.0.2.jar:4.0.2]
+	at org.springframework.boot.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:110) ~[spring-boot-tomcat-4.0.2.jar:4.0.2]
+	at org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:408) ~[spring-boot-tomcat-4.0.2.jar:4.0.2]
+	at org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:166) ~[spring-boot-tomcat-4.0.2.jar:4.0.2]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:190) ~[spring-boot-web-server-4.0.2.jar:4.0.2]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:164) ~[spring-boot-web-server-4.0.2.jar:4.0.2]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:614) ~[spring-context-7.0.3.jar:7.0.3]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.2.jar:4.0.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.2.jar:4.0.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.2.jar:4.0.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.2.jar:4.0.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.2.jar:4.0.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.2.jar:4.0.2]
+	at com.example.vehiclesale.UsermanagementApplication.main(UsermanagementApplication.java:40) ~[classes/:na]
+
+2026-05-02T22:31:13.214-03:00 ERROR 81330 --- [cardealer] [main] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+2026-05-02T22:31:13.214-03:00 ERROR 81330 --- [cardealer] [main] t.s.DeferredServletContainerInitializers : Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'securityFilter' defined in file [/Users/souza/IdeaProjects/vehiclesale/target/classes/com/example/vehiclesale/security/SecurityFilter.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'userRepository' defined in com.example.vehiclesale.repository.UserRepository defined in @EnableJpaRepositories declared on DataJpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+2026-05-02T22:31:13.224-03:00  WARN 81330 --- [cardealer] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2026-05-02T22:31:13.230-03:00 ERROR 81330 --- [cardealer] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.context.ApplicationContextException: Unable to start web server
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:167) ~[spring-boot-web-server-4.0.2.jar:4.0.2]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:614) ~[spring-context-7.0.3.jar:7.0.3]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.2.jar:4.0.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.2.jar:4.0.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.2.jar:4.0.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.2.jar:4.0.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.2.jar:4.0.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.2.jar:4.0.2]
+	at com.example.vehiclesale.UsermanagementApplication.main(UsermanagementApplication.java:40) ~[classes/:na]
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:150) ~[spring-boot-tomcat-4.0.2.jar:4.0.2]
+	at org.springframework.boot.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:110) ~[spring-boot-tomcat-4.0.2.jar:4.0.2]
+	at org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:408) ~[spring-boot-tomcat-4.0.2.jar:4.0.2]
+	at org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:166) ~[spring-boot-tomcat-4.0.2.jar:4.0.2]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:190) ~[spring-boot-web-server-4.0.2.jar:4.0.2]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:164) ~[spring-boot-web-server-4.0.2.jar:4.0.2]
+	... 8 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'securityFilter' defined in file [/Users/souza/IdeaProjects/vehiclesale/target/classes/com/example/vehiclesale/security/SecurityFilter.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'userRepository' defined in com.example.vehiclesale.repository.UserRepository defined in @EnableJpaRepositories declared on DataJpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1382) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1221) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:231) ~[spring-boot-4.0.2.jar:4.0.2]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:185) ~[spring-boot-4.0.2.jar:4.0.2]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:180) ~[spring-boot-4.0.2.jar:4.0.2]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:165) ~[spring-boot-4.0.2.jar:4.0.2]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:97) ~[spring-boot-4.0.2.jar:4.0.2]
+	at org.springframework.boot.web.context.servlet.WebApplicationContextInitializer.initialize(WebApplicationContextInitializer.java:53) ~[spring-boot-4.0.2.jar:4.0.2]
+	at org.springframework.boot.tomcat.servlet.DeferredServletContainerInitializers.onStartup(DeferredServletContainerInitializers.java:55) ~[spring-boot-tomcat-4.0.2.jar:4.0.2]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4416) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1162) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1158) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:81) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:149) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:714) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:780) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1162) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1158) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:81) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:149) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:714) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:201) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:410) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:864) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:435) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.springframework.boot.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:131) ~[spring-boot-tomcat-4.0.2.jar:4.0.2]
+	... 13 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRepository' defined in com.example.vehiclesale.repository.UserRepository defined in @EnableJpaRepositories declared on DataJpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1712) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1461) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:229) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1762) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:912) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-7.0.3.jar:7.0.3]
+	... 53 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jpaSharedEM_entityManagerFactory': Cannot resolve reference to bean 'entityManagerFactory' while setting constructor argument
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:691) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:513) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1362) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1194) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:356) ~[spring-beans-7.0.3.jar:7.0.3]
+	... 67 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365) ~[spring-beans-7.0.3.jar:7.0.3]
+	... 79 common frames omitted
+Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:273) ~[hibernate-core-7.2.1.Final.jar:7.2.1.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:235) ~[hibernate-core-7.2.1.Final.jar:7.2.1.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:212) ~[hibernate-core-7.2.1.Final.jar:7.2.1.Final]
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:44) ~[hibernate-core-7.2.1.Final.jar:7.2.1.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:251) ~[hibernate-core-7.2.1.Final.jar:7.2.1.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:203) ~[hibernate-core-7.2.1.Final.jar:7.2.1.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:170) ~[hibernate-core-7.2.1.Final.jar:7.2.1.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1392) ~[hibernate-core-7.2.1.Final.jar:7.2.1.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.populateSessionFactoryBuilder(EntityManagerFactoryBuilderImpl.java:1472) ~[hibernate-core-7.2.1.Final.jar:7.2.1.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1454) ~[hibernate-core-7.2.1.Final.jar:7.2.1.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-7.0.3.jar:7.0.3]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:433) ~[spring-orm-7.0.3.jar:7.0.3]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:416) ~[spring-orm-7.0.3.jar:7.0.3]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-7.0.3.jar:7.0.3]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:409) ~[spring-orm-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1864) ~[spring-beans-7.0.3.jar:7.0.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1813) ~[spring-beans-7.0.3.jar:7.0.3]
+	... 86 common frames omitted
+Caused by: org.hibernate.HibernateException: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:190) ~[hibernate-core-7.2.1.Final.jar:7.2.1.Final]
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:86) ~[hibernate-core-7.2.1.Final.jar:7.2.1.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentWithDefaults(JdbcEnvironmentInitiator.java:200) ~[hibernate-core-7.2.1.Final.jar:7.2.1.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:452) ~[hibernate-core-7.2.1.Final.jar:7.2.1.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironment(JdbcEnvironmentInitiator.java:143) ~[hibernate-core-7.2.1.Final.jar:7.2.1.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:120) ~[hibernate-core-7.2.1.Final.jar:7.2.1.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:80) ~[hibernate-core-7.2.1.Final.jar:7.2.1.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:133) ~[hibernate-core-7.2.1.Final.jar:7.2.1.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:260) ~[hibernate-core-7.2.1.Final.jar:7.2.1.Final]
+	... 102 common frames omitted
+

@@ -1,17 +1,17 @@
-package com.example.usermanagement.service;
+package com.example.vehiclesale.service;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.example.usermanagement.dto.VehicleRequestDTO;
-import com.example.usermanagement.dto.VehicleResponseDTO;
-import com.example.usermanagement.dto.VehicleUpdateDTO;
-import com.example.usermanagement.exception.VehicleAlreadyRegisteredException;
-import com.example.usermanagement.exception.VehicleNotFoundException;
-import com.example.usermanagement.mappers.VehicleMapper;
-import com.example.usermanagement.model.vehicle.Vehicle;
-import com.example.usermanagement.repository.VehicleRepository;
+import com.example.vehiclesale.dto.VehicleRequestDTO;
+import com.example.vehiclesale.dto.VehicleResponseDTO;
+import com.example.vehiclesale.dto.VehicleUpdateDTO;
+import com.example.vehiclesale.exception.VehicleAlreadyRegisteredException;
+import com.example.vehiclesale.exception.VehicleNotFoundException;
+import com.example.vehiclesale.mappers.VehicleMapper;
+import com.example.vehiclesale.model.vehicle.Vehicle;
+import com.example.vehiclesale.repository.VehicleRepository;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;

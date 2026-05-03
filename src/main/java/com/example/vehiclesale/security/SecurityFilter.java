@@ -1,13 +1,12 @@
-package com.example.usermanagement.security;
+package com.example.vehiclesale.security;
 
 import java.io.IOException;
 
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.example.usermanagement.repository.UserRepository;
+import com.example.vehiclesale.repository.UserRepository;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

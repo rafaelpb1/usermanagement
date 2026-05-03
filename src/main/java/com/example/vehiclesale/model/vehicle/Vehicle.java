@@ -1,4 +1,4 @@
-package com.example.usermanagement.model.vehicle;
+package com.example.vehiclesale.model.vehicle;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Digits;

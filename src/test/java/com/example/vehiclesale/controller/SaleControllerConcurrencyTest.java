@@ -1,8 +1,8 @@
-package com.example.usermanagement.controller;
+package com.example.vehiclesale.controller;
 
-import com.example.usermanagement.exception.GlobalExceptionHandler;
-import com.example.usermanagement.model.vehicle.Vehicle;
-import com.example.usermanagement.service.SaleService;
+import com.example.vehiclesale.exception.GlobalExceptionHandler;
+import com.example.vehiclesale.model.vehicle.Vehicle;
+import com.example.vehiclesale.service.SaleService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.MediaType;

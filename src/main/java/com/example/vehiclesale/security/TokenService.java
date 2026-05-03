@@ -1,12 +1,12 @@
-package com.example.usermanagement.security;
+package com.example.vehiclesale.security;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
 import com.auth0.jwt.exceptions.JWTVerificationException;
-import com.example.usermanagement.dto.LoginResponseDTO;
-import com.example.usermanagement.exception.GenerateTokenErrorException;
-import com.example.usermanagement.model.users.User;
+import com.example.vehiclesale.dto.LoginResponseDTO;
+import com.example.vehiclesale.exception.GenerateTokenErrorException;
+import com.example.vehiclesale.model.users.User;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 

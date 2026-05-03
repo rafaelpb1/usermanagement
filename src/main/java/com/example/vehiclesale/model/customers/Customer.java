@@ -1,4 +1,4 @@
-package com.example.usermanagement.model.customers;
+package com.example.vehiclesale.model.customers;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

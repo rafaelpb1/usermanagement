@@ -1,7 +1,7 @@
-package com.example.usermanagement.security;
+package com.example.vehiclesale.security;
 
-import com.example.usermanagement.model.users.User;
-import com.example.usermanagement.service.UserService;
+import com.example.vehiclesale.model.users.User;
+import com.example.vehiclesale.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

@@ -1,12 +1,12 @@
-package com.example.usermanagement.service;
+package com.example.vehiclesale.service;
 
-import com.example.usermanagement.dto.LoginRequestDTO;
-import com.example.usermanagement.dto.LoginResponseDTO;
-import com.example.usermanagement.dto.RegisterDTO;
-import com.example.usermanagement.exception.LoginAlreadyExists;
-import com.example.usermanagement.model.users.User;
-import com.example.usermanagement.repository.UserRepository;
-import com.example.usermanagement.security.TokenService;
+import com.example.vehiclesale.dto.LoginRequestDTO;
+import com.example.vehiclesale.dto.LoginResponseDTO;
+import com.example.vehiclesale.dto.RegisterDTO;
+import com.example.vehiclesale.exception.LoginAlreadyExists;
+import com.example.vehiclesale.model.users.User;
+import com.example.vehiclesale.repository.UserRepository;
+import com.example.vehiclesale.security.TokenService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

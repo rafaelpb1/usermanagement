@@ -1,4 +1,4 @@
-package com.example.usermanagement.exception;
+package com.example.vehiclesale.exception;
 
 public class GenerateTokenErrorException extends RuntimeException {
     public GenerateTokenErrorException(String message) {

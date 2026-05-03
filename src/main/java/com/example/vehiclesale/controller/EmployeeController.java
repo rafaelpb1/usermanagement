@@ -1,8 +1,8 @@
-package com.example.usermanagement.controller;
+package com.example.vehiclesale.controller;
 
-import com.example.usermanagement.dto.EmployeeRequestDTO;
-import com.example.usermanagement.dto.EmployeeResponseDTO;
-import com.example.usermanagement.service.EmployeeService;
+import com.example.vehiclesale.dto.EmployeeRequestDTO;
+import com.example.vehiclesale.dto.EmployeeResponseDTO;
+import com.example.vehiclesale.service.EmployeeService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;

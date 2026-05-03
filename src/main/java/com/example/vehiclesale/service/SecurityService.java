@@ -1,7 +1,7 @@
-package com.example.usermanagement.service;
+package com.example.vehiclesale.service;
 
-import com.example.usermanagement.model.users.User;
-import com.example.usermanagement.security.CustomAuthentication;
+import com.example.vehiclesale.model.users.User;
+import com.example.vehiclesale.security.CustomAuthentication;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;

@@ -1,7 +1,7 @@
-package com.example.usermanagement.service;
+package com.example.vehiclesale.service;
 
-import com.example.usermanagement.model.users.User;
-import com.example.usermanagement.repository.UserRepository;
+import com.example.vehiclesale.model.users.User;
+import com.example.vehiclesale.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;

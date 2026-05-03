@@ -1,8 +1,8 @@
-package com.example.usermanagement.controller;
+package com.example.vehiclesale.controller;
 
-import com.example.usermanagement.dto.LoginRequestDTO;
-import com.example.usermanagement.dto.RegisterDTO;
-import com.example.usermanagement.service.AuthenticationService;
+import com.example.vehiclesale.dto.LoginRequestDTO;
+import com.example.vehiclesale.dto.RegisterDTO;
+import com.example.vehiclesale.service.AuthenticationService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

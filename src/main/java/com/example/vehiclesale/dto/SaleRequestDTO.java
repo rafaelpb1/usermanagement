@@ -1,6 +1,6 @@
-package com.example.usermanagement.dto;
+package com.example.vehiclesale.dto;
 
-import com.example.usermanagement.model.sale.PaymentMethod;
+import com.example.vehiclesale.model.sale.PaymentMethod;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.NotBlank;

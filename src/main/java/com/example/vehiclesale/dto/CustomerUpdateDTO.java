@@ -1,4 +1,4 @@
-package com.example.usermanagement.dto;
+package com.example.vehiclesale.dto;
 
 import jakarta.validation.constraints.NotBlank;
 
