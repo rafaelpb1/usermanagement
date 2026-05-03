@@ -1,21 +1,28 @@
 spring:
   application:
-  name: cardealer
+    name: cardealer
 
   datasource:
-    url: jdbc:h2:mem:usermanagement
-    username: sa
-    password: password
-    driverClassName: org.h2.Driver
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+    driver-class-name: org.postgresql.Driver
 
   jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
     show-sql: true
+    open-in-view: false
     hibernate:
       ddl-auto: update
     properties:
       hibernate:
         format_sql: true
+
+  sql:
+    init:
+      mode: never
+
+  flyway:
+    enabled: false
 
   security:
     oauth2:
@@ -24,11 +31,6 @@ spring:
           google:
             client-id: ${GOOGLE_CLIENT_ID}
             client-secret: ${GOOGLE_CLIENT_SECRET}
-
-  h2:
-    console:
-      enabled: true
-      path: /h2-console
 
 server:
   port: 8090
@@ -51,9 +53,3 @@ logging:
     org:
       springframework:
         web: debug
-
-  #trace
-  #debug
-  #info
-  #error
-  #warn

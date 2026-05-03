@@ -28,7 +28,6 @@ public class SaleService {
     private final EmployeeRepository employeeRepository;
     private final CustomerRepository customerRepository;
     private final VehicleRepository vehicleRepository;
-    VehicleStatus vehicleStatus;
 
     @Transactional
     public SaleResponseDTO create(SaleRequestDTO dto) {
@@ -47,6 +46,7 @@ public class SaleService {
         }
 
         vehicle.setStatus(VehicleStatus.SOLD);
+        vehicleRepository.saveAndFlush(vehicle);
 
         Sale sale = mapper.toEntity(
                 dto,

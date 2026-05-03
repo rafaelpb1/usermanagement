@@ -2,7 +2,6 @@ package com.example.usermanagement.model.users;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.Type;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

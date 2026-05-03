@@ -1,6 +1,5 @@
 package com.example.usermanagement.security;
 
-import com.example.usermanagement.dto.LoginResponseDTO;
 import com.example.usermanagement.model.users.User;
 import com.example.usermanagement.service.UserService;
 import jakarta.servlet.ServletException;
