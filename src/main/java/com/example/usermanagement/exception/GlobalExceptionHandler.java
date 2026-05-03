@@ -2,6 +2,7 @@ package com.example.usermanagement.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.converter.HttpMessageNotReadableException;
+import org.springframework.orm.ObjectOptimisticLockingFailureException;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import jakarta.persistence.OptimisticLockException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -72,6 +74,16 @@ public class GlobalExceptionHandler {
         return new ErrorResponse(HttpStatus.FORBIDDEN.value(),
                 "Access Denied.",
                 List.of());
+    }
+
+    @ExceptionHandler({ObjectOptimisticLockingFailureException.class, OptimisticLockException.class})
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public ErrorResponse handleOptimisticLocking(RuntimeException e) {
+        return new ErrorResponse(
+                HttpStatus.CONFLICT.value(),
+                "Conflito de concorrencia: o veículo foi alterado por outra operação. Atualize e tente novamente.",
+                List.of()
+        );
     }
 
     @ExceptionHandler(Exception.class)

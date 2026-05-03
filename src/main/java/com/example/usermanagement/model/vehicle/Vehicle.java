@@ -44,6 +44,10 @@ public class Vehicle {
     @Column(name = "status")
     private VehicleStatus status = VehicleStatus.AVAILABLE;
 
+    @Version
+    @Column(name = "version", nullable = false)
+    private Long version;
+
     @Column(name = "created_at", nullable = false, updatable = false)
     @CreationTimestamp
     private Instant createdAt;
