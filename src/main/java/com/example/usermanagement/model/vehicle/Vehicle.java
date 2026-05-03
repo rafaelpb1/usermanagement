@@ -1,6 +1,9 @@
 package com.example.usermanagement.model.vehicle;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Digits;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -36,7 +39,10 @@ public class Vehicle {
     @Column(name = "model_year", nullable = false)
     private Integer year;
 
-    @Column(name = "price", precision = 12, scale = 2)
+    @NotNull
+    @Column(name = "price", precision = 12, scale = 2, nullable = false)
+    @Digits(integer = 10, fraction = 2)
+    @Positive
     private BigDecimal price;
 
     @Builder.Default

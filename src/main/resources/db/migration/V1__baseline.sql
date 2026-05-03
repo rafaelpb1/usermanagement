@@ -38,9 +38,11 @@ CREATE TABLE vehicles (
     model VARCHAR(255) NOT NULL,
     color VARCHAR(255),
     model_year INTEGER NOT NULL,
-    price NUMERIC(12, 2),
+    price NUMERIC(12, 2) NOT NULL,
     status VARCHAR(255) DEFAULT 'AVAILABLE',
     created_at TIMESTAMP NOT NULL,
+    CONSTRAINT ck_vehicles_price_positive
+        CHECK (price > 0),
     CONSTRAINT ck_vehicles_status
         CHECK (status IN ('AVAILABLE', 'SOLD', 'MAINTENANCE'))
 );
@@ -62,6 +64,8 @@ CREATE TABLE sales (
     CONSTRAINT fk_sales_employee
         FOREIGN KEY (employee_id)
         REFERENCES employees (id),
+    CONSTRAINT ck_sales_value_positive
+        CHECK (sale_value > 0),
     CONSTRAINT ck_sales_payment_method
         CHECK (payment_method IS NULL OR payment_method IN ('CREDIT', 'DEBIT', 'PIX', 'BOLETO', 'CRYPTO'))
 );
