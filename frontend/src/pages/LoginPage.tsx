@@ -1,36 +1,31 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { saveToken } from "../services/session";
+import { login as loginRequest } from "../services/authService";
 
 const LoginPage: React.FC = () => {
     const [login, setLogin] = useState<string>("");
+    const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
+    const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
     const navigate = useNavigate();
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        setIsSubmitting(true);
 
         try {
-            const response = await fetch("/api/auth/login", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({ login, password })
-            });
-
-            if (!response.ok) {
-                throw new Error("Falha no login");
-            }
-
-            const result: { token: string } = await response.json();
+            const result = await loginRequest({ login, email, password });
 
             saveToken(result.token);
-            navigate("/dashboard");
+            setTimeout(() => {
+                navigate("/dashboard");
+            }, 700);
 
         } catch (error) {
             console.error("Erro no login:", error);
+            setIsSubmitting(false);
         }
     };
 
@@ -59,9 +54,24 @@ const LoginPage: React.FC = () => {
                                 id="login"
                                 required
                                 className="appearance-none rounded-lg block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                                placeholder="seuLogin"
+                                placeholder="seulogin"
                                 value={login}
                                 onChange={(e) => setLogin(e.target.value)}
+                            />
+                        </div>
+
+                        <div>
+                            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                                Email
+                            </label>
+                            <input
+                                type="email"
+                                id="email"
+                                required
+                                className="appearance-none rounded-lg block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                placeholder="seu@email.com"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                             />
                         </div>
 
@@ -84,9 +94,10 @@ const LoginPage: React.FC = () => {
 
                     <button
                         type="submit"
+                        disabled={isSubmitting}
                         className="group relative w-full flex justify-center py-3 px-4 text-sm font-medium rounded-lg text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors duration-200"
                     >
-                        Entrar
+                        {isSubmitting ? "Entrando..." : "Entrar"}
                     </button>
                 </form>
 

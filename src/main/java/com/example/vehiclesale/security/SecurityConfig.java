@@ -28,7 +28,7 @@ public class SecurityConfig {
     private final SecurityFilter securityFilter;
 
     @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http, LoginSocialSuccessHandler successHandler) throws Exception {
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .csrf(csrf -> csrf.disable())
                 .cors(cors -> {})
@@ -44,18 +44,17 @@ public class SecurityConfig {
                                 .requestMatchers("/auth/register/**").permitAll()
 //                        .requestMatchers("/users/**").hasRole("ADMIN")
 //                        .requestMatchers("/users/me").hasAnyRole("ADMIN", "USER")
-                                .requestMatchers("/login/**").permitAll()
                                 .requestMatchers("/register/**").permitAll()
                                 .anyRequest().authenticated()
 
                 )
-                .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
+                .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class);
 
-                .oauth2Login(oauth2 -> {
-                    oauth2
-                            .loginPage("/login")
-                            .successHandler(successHandler);
-                });
+//                OAuth2/Google login desativado temporariamente.
+//                .oauth2Login(oauth2 -> {
+//                    oauth2
+//                            .successHandler(successHandler);
+//                });
 //                .formLogin(configurer -> {
 //                    configurer.loginPage("/login");
 //                });

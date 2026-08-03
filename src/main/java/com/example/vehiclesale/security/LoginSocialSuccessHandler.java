@@ -13,6 +13,9 @@ import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 
+/*
+ OAuth2/Google login desativado temporariamente.
+
 @Component
 @RequiredArgsConstructor
 public class LoginSocialSuccessHandler extends SavedRequestAwareAuthenticationSuccessHandler {
@@ -40,3 +43,4 @@ public class LoginSocialSuccessHandler extends SavedRequestAwareAuthenticationSu
         response.getWriter().write("{\"token\": \"" + token + "\"}");
     }
 }
+*/
